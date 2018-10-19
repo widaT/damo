@@ -23,6 +23,9 @@ class SearchServiceImpl final : public Searcher::Service {
         SearchReply_User *user  =reply->add_users();
         user->set_name("wida",4);
         user->set_distance(5.6);
+
+        reply->add_users()->set_name("wwwxxxx",7);
+        reply->add_users()->set_distance(8.885);
         return Status::OK;
     }
 };
