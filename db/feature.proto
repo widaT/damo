@@ -1,0 +1,6 @@
+ syntax = "proto3";
+ package featurepb;
+
+ message Feature {
+    repeated float feature = 1;
+ }
