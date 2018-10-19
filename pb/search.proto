@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+//protoc --grpc_out=. --plugin=protoc-gen-pb=`which grpc_cpp_plugin` search.proto
+//protoc --cpp_out=. search.proto
+package pb;
+
+service Searcher {
+    rpc Search (SearchRequest) returns (SearchReply) {}
+}
+
+message SearchRequest {
+    repeated  float name = 1;
+}
+
+message SearchReply {
+    message User {
+        string name = 1;
+        float  distance = 2;
+    }
+    repeated User users  = 1;
+}
+
