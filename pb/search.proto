@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-//protoc --grpc_out=. --plugin=protoc-gen-pb=`which grpc_cpp_plugin` search.proto
+//protoc --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` search.proto
 //protoc --cpp_out=. search.proto
 package pb;
 

@@ -16,12 +16,12 @@ struct User  {
 
 class Facedb {
 private:
-    DB *db;
+    static DB *db;
     Facedb();
     //把复制构造函数和=操作符也设为私有
     Facedb(const Facedb&);
     Facedb& operator=(const Facedb&);
-    static Facedb* instance = new Facedb;
+    static Facedb* instance;
 
 public:
     static Facedb* getInstance();

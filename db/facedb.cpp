@@ -12,10 +12,10 @@ Facedb* Facedb::getInstance() {
 Facedb::Facedb() {
     rocksdb::Options options;
     options.create_if_missing = true;
-    *db = DB::DB(options,"/tmp/testdb");
+    instance = new Facedb();
+    *db = DB(options,"/tmp/testdb");
 }
 
 Facedb::~Facedb() {
-   delete db;
    delete instance;
 };

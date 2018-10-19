@@ -1,6 +1,7 @@
  syntax = "proto3";
  package featurepb;
 
+ //protoc --cpp_out=. feature.proto
  message Feature {
     repeated float feature = 1;
  }
