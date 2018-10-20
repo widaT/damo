@@ -7,11 +7,12 @@
 
 #include <string>
 #include "db.h"
+#include "feature.pb.h"
 
 using namespace db;
 struct User  {
     std::string id;
-    float *feature;
+    featurepb::Feature feature;
 };
 
 class Facedb {

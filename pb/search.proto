@@ -4,8 +4,24 @@ syntax = "proto3";
 //protoc --cpp_out=. search.proto
 package pb;
 
-service Searcher {
+service Facedb {
     rpc Search (SearchRequest) returns (SearchReply) {}
+    rpc GroupList(SearchRequest) returns (GroupsReply) {}
+    rpc AddUser(UserInfo) returns (NomalReply) {}
+    rpc DelUser(UserInfo) returns (NomalReply) {}
+}
+
+message UserInfo{
+    string id = 1;
+    repeated float feature = 2;
+}
+
+message NomalReply{
+    bool ret = 1;
+}
+
+message GroupsReply{
+    repeated string grops = 1;
 }
 
 message SearchRequest {
@@ -19,4 +35,3 @@ message SearchReply {
     }
     repeated User users  = 1;
 }
-

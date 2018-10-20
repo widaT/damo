@@ -3,7 +3,7 @@
 //
 
 #include "facedb.h"
-
+#include "feature.pb.h"
 
 Facedb* Facedb::getInstance() {
      return instance;
@@ -16,6 +16,17 @@ Facedb::Facedb() {
     *db = DB(options,"/tmp/testdb");
 }
 
+
+int Facedb::addUser(User user) {
+    std::string featureStr;
+    user.feature.SerializeToString(&featureStr);
+    google::protobuf::ShutdownProtobufLibrary();
+    return Facedb::db->Put(user.id,featureStr);
+}
+
+
 Facedb::~Facedb() {
    delete instance;
 };
+
+

@@ -27,10 +27,10 @@ class ServerContext;
 
 namespace pb {
 
-class Searcher final {
+class Facedb final {
  public:
   static constexpr char const* service_full_name() {
-    return "pb.Searcher";
+    return "pb.Facedb";
   }
   class StubInterface {
    public:
@@ -42,15 +42,45 @@ class Searcher final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::SearchReply>> PrepareAsyncSearch(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::SearchReply>>(PrepareAsyncSearchRaw(context, request, cq));
     }
+    virtual ::grpc::Status GroupList(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::pb::GroupsReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::GroupsReply>> AsyncGroupList(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::GroupsReply>>(AsyncGroupListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::GroupsReply>> PrepareAsyncGroupList(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::GroupsReply>>(PrepareAsyncGroupListRaw(context, request, cq));
+    }
+    virtual ::grpc::Status AddUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::pb::NomalReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>> AsyncAddUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>>(AsyncAddUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>> PrepareAsyncAddUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>>(PrepareAsyncAddUserRaw(context, request, cq));
+    }
+    virtual ::grpc::Status DelUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::pb::NomalReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>> AsyncDelUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>>(AsyncDelUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>> PrepareAsyncDelUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>>(PrepareAsyncDelUserRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
       virtual void Search(::grpc::ClientContext* context, const ::pb::SearchRequest* request, ::pb::SearchReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void GroupList(::grpc::ClientContext* context, const ::pb::SearchRequest* request, ::pb::GroupsReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void AddUser(::grpc::ClientContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void DelUser(::grpc::ClientContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::SearchReply>* AsyncSearchRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::SearchReply>* PrepareAsyncSearchRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::GroupsReply>* AsyncGroupListRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::GroupsReply>* PrepareAsyncGroupListRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>* AsyncAddUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>* PrepareAsyncAddUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>* AsyncDelUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>* PrepareAsyncDelUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -62,10 +92,34 @@ class Searcher final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::SearchReply>> PrepareAsyncSearch(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::SearchReply>>(PrepareAsyncSearchRaw(context, request, cq));
     }
+    ::grpc::Status GroupList(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::pb::GroupsReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::GroupsReply>> AsyncGroupList(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::GroupsReply>>(AsyncGroupListRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::GroupsReply>> PrepareAsyncGroupList(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::GroupsReply>>(PrepareAsyncGroupListRaw(context, request, cq));
+    }
+    ::grpc::Status AddUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::pb::NomalReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>> AsyncAddUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>>(AsyncAddUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>> PrepareAsyncAddUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>>(PrepareAsyncAddUserRaw(context, request, cq));
+    }
+    ::grpc::Status DelUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::pb::NomalReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>> AsyncDelUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>>(AsyncDelUserRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>> PrepareAsyncDelUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>>(PrepareAsyncDelUserRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
       void Search(::grpc::ClientContext* context, const ::pb::SearchRequest* request, ::pb::SearchReply* response, std::function<void(::grpc::Status)>) override;
+      void GroupList(::grpc::ClientContext* context, const ::pb::SearchRequest* request, ::pb::GroupsReply* response, std::function<void(::grpc::Status)>) override;
+      void AddUser(::grpc::ClientContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response, std::function<void(::grpc::Status)>) override;
+      void DelUser(::grpc::ClientContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -79,7 +133,16 @@ class Searcher final {
     class experimental_async async_stub_{this};
     ::grpc::ClientAsyncResponseReader< ::pb::SearchReply>* AsyncSearchRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pb::SearchReply>* PrepareAsyncSearchRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::GroupsReply>* AsyncGroupListRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::GroupsReply>* PrepareAsyncGroupListRaw(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>* AsyncAddUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>* PrepareAsyncAddUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>* AsyncDelUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>* PrepareAsyncDelUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_Search_;
+    const ::grpc::internal::RpcMethod rpcmethod_GroupList_;
+    const ::grpc::internal::RpcMethod rpcmethod_AddUser_;
+    const ::grpc::internal::RpcMethod rpcmethod_DelUser_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -88,6 +151,9 @@ class Searcher final {
     Service();
     virtual ~Service();
     virtual ::grpc::Status Search(::grpc::ServerContext* context, const ::pb::SearchRequest* request, ::pb::SearchReply* response);
+    virtual ::grpc::Status GroupList(::grpc::ServerContext* context, const ::pb::SearchRequest* request, ::pb::GroupsReply* response);
+    virtual ::grpc::Status AddUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response);
+    virtual ::grpc::Status DelUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_Search : public BaseClass {
@@ -109,7 +175,67 @@ class Searcher final {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_Search<Service > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_GroupList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_GroupList() {
+      ::grpc::Service::MarkMethodAsync(1);
+    }
+    ~WithAsyncMethod_GroupList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GroupList(::grpc::ServerContext* context, const ::pb::SearchRequest* request, ::pb::GroupsReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGroupList(::grpc::ServerContext* context, ::pb::SearchRequest* request, ::grpc::ServerAsyncResponseWriter< ::pb::GroupsReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_AddUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_AddUser() {
+      ::grpc::Service::MarkMethodAsync(2);
+    }
+    ~WithAsyncMethod_AddUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddUser(::grpc::ServerContext* context, ::pb::UserInfo* request, ::grpc::ServerAsyncResponseWriter< ::pb::NomalReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithAsyncMethod_DelUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_DelUser() {
+      ::grpc::Service::MarkMethodAsync(3);
+    }
+    ~WithAsyncMethod_DelUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DelUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDelUser(::grpc::ServerContext* context, ::pb::UserInfo* request, ::grpc::ServerAsyncResponseWriter< ::pb::NomalReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_Search<WithAsyncMethod_GroupList<WithAsyncMethod_AddUser<WithAsyncMethod_DelUser<Service > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_Search : public BaseClass {
    private:
@@ -123,6 +249,57 @@ class Searcher final {
     }
     // disable synchronous version of this method
     ::grpc::Status Search(::grpc::ServerContext* context, const ::pb::SearchRequest* request, ::pb::SearchReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_GroupList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_GroupList() {
+      ::grpc::Service::MarkMethodGeneric(1);
+    }
+    ~WithGenericMethod_GroupList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GroupList(::grpc::ServerContext* context, const ::pb::SearchRequest* request, ::pb::GroupsReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_AddUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_AddUser() {
+      ::grpc::Service::MarkMethodGeneric(2);
+    }
+    ~WithGenericMethod_AddUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_DelUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_DelUser() {
+      ::grpc::Service::MarkMethodGeneric(3);
+    }
+    ~WithGenericMethod_DelUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DelUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -148,6 +325,66 @@ class Searcher final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_GroupList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_GroupList() {
+      ::grpc::Service::MarkMethodRaw(1);
+    }
+    ~WithRawMethod_GroupList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status GroupList(::grpc::ServerContext* context, const ::pb::SearchRequest* request, ::pb::GroupsReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestGroupList(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(1, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_AddUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_AddUser() {
+      ::grpc::Service::MarkMethodRaw(2);
+    }
+    ~WithRawMethod_AddUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status AddUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestAddUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(2, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
+  class WithRawMethod_DelUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_DelUser() {
+      ::grpc::Service::MarkMethodRaw(3);
+    }
+    ~WithRawMethod_DelUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status DelUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestDelUser(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(3, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_Search : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -167,9 +404,69 @@ class Searcher final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedSearch(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pb::SearchRequest,::pb::SearchReply>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_Search<Service > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_GroupList : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_GroupList() {
+      ::grpc::Service::MarkMethodStreamed(1,
+        new ::grpc::internal::StreamedUnaryHandler< ::pb::SearchRequest, ::pb::GroupsReply>(std::bind(&WithStreamedUnaryMethod_GroupList<BaseClass>::StreamedGroupList, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_GroupList() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status GroupList(::grpc::ServerContext* context, const ::pb::SearchRequest* request, ::pb::GroupsReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedGroupList(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pb::SearchRequest,::pb::GroupsReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_AddUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_AddUser() {
+      ::grpc::Service::MarkMethodStreamed(2,
+        new ::grpc::internal::StreamedUnaryHandler< ::pb::UserInfo, ::pb::NomalReply>(std::bind(&WithStreamedUnaryMethod_AddUser<BaseClass>::StreamedAddUser, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_AddUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status AddUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedAddUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pb::UserInfo,::pb::NomalReply>* server_unary_streamer) = 0;
+  };
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_DelUser : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_DelUser() {
+      ::grpc::Service::MarkMethodStreamed(3,
+        new ::grpc::internal::StreamedUnaryHandler< ::pb::UserInfo, ::pb::NomalReply>(std::bind(&WithStreamedUnaryMethod_DelUser<BaseClass>::StreamedDelUser, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_DelUser() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status DelUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedDelUser(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pb::UserInfo,::pb::NomalReply>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_Search<WithStreamedUnaryMethod_GroupList<WithStreamedUnaryMethod_AddUser<WithStreamedUnaryMethod_DelUser<Service > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_Search<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_Search<WithStreamedUnaryMethod_GroupList<WithStreamedUnaryMethod_AddUser<WithStreamedUnaryMethod_DelUser<Service > > > > StreamedService;
 };
 
 }  // namespace pb
