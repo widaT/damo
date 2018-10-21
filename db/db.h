@@ -13,7 +13,7 @@ namespace db {
         rocksdb::WriteOptions wo = rocksdb::WriteOptions();
         rocksdb::ReadOptions ro = rocksdb::ReadOptions();
     public:
-        DB(rocksdb::Options, std::string);
+        DB(std::string);
         int Put(std::string, std::string);
         int Get(std::string, std::string *);
         int Delete(std::string);

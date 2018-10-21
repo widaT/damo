@@ -2,18 +2,24 @@ syntax = "proto3";
 
 //protoc --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` search.proto
 //protoc --cpp_out=. search.proto
+//protoc --go_out=plugins=grpc:. search.proto
 package pb;
 
 service Facedb {
     rpc Search (SearchRequest) returns (SearchReply) {}
     rpc GroupList(SearchRequest) returns (GroupsReply) {}
     rpc AddUser(UserInfo) returns (NomalReply) {}
+    rpc GetUser(UserInfo) returns (UserInfo) {}
     rpc DelUser(UserInfo) returns (NomalReply) {}
+}
+
+message Feature {
+    repeated float feature = 1;
 }
 
 message UserInfo{
     string id = 1;
-    repeated float feature = 2;
+    Feature feature = 2;
 }
 
 message NomalReply{
@@ -25,7 +31,8 @@ message GroupsReply{
 }
 
 message SearchRequest {
-    repeated  float name = 1;
+    string group = 1;
+    repeated  float feature = 2;
 }
 
 message SearchReply {

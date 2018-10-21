@@ -21,6 +21,7 @@ static const char* Facedb_method_names[] = {
   "/pb.Facedb/Search",
   "/pb.Facedb/GroupList",
   "/pb.Facedb/AddUser",
+  "/pb.Facedb/GetUser",
   "/pb.Facedb/DelUser",
 };
 
@@ -34,7 +35,8 @@ Facedb::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   : channel_(channel), rpcmethod_Search_(Facedb_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_GroupList_(Facedb_method_names[1], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_AddUser_(Facedb_method_names[2], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
-  , rpcmethod_DelUser_(Facedb_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GetUser_(Facedb_method_names[3], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_DelUser_(Facedb_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Facedb::Stub::Search(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::pb::SearchReply* response) {
@@ -85,6 +87,22 @@ void Facedb::Stub::experimental_async::AddUser(::grpc::ClientContext* context, c
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::NomalReply>::Create(channel_.get(), cq, rpcmethod_AddUser_, context, request, false);
 }
 
+::grpc::Status Facedb::Stub::GetUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::pb::UserInfo* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GetUser_, context, request, response);
+}
+
+void Facedb::Stub::experimental_async::GetUser(::grpc::ClientContext* context, const ::pb::UserInfo* request, ::pb::UserInfo* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GetUser_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pb::UserInfo>* Facedb::Stub::AsyncGetUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::UserInfo>::Create(channel_.get(), cq, rpcmethod_GetUser_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pb::UserInfo>* Facedb::Stub::PrepareAsyncGetUserRaw(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::UserInfo>::Create(channel_.get(), cq, rpcmethod_GetUser_, context, request, false);
+}
+
 ::grpc::Status Facedb::Stub::DelUser(::grpc::ClientContext* context, const ::pb::UserInfo& request, ::pb::NomalReply* response) {
   return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_DelUser_, context, request, response);
 }
@@ -120,6 +138,11 @@ Facedb::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Facedb_method_names[3],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Facedb::Service, ::pb::UserInfo, ::pb::UserInfo>(
+          std::mem_fn(&Facedb::Service::GetUser), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Facedb_method_names[4],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Facedb::Service, ::pb::UserInfo, ::pb::NomalReply>(
           std::mem_fn(&Facedb::Service::DelUser), this)));
 }
@@ -142,6 +165,13 @@ Facedb::Service::~Service() {
 }
 
 ::grpc::Status Facedb::Service::AddUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::NomalReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Facedb::Service::GetUser(::grpc::ServerContext* context, const ::pb::UserInfo* request, ::pb::UserInfo* response) {
   (void) context;
   (void) request;
   (void) response;

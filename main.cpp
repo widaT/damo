@@ -1,6 +1,5 @@
 #include <iostream>
 #include "db/db.h"
-#include "db/feature.pb.h"
 #include "pb/search.pb.h"
 #include "pb/search.grpc.pb.h"
 #include <grpcpp/grpcpp.h>
@@ -8,16 +7,18 @@
 #include <unistd.h>
 #include "db/log.h"
 #include <immintrin.h>
+#include "db/facedb.h"
 
-using namespace db;
 using namespace std;
-using namespace featurepb;
 using namespace pb;
 using namespace config;
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
+
+static db::Facedb *facedb =  db::Facedb::getInstance();
+
 
 float avx_euclidean_distance( float *x, float *y)
 {
@@ -46,22 +47,35 @@ float distance(float *a,float *b) {
     return distance;
 }
 
-class SearchServiceImpl final : public Facedb::Service {
+class SearchServiceImpl final : public ::Facedb::Service {
     Status Search(ServerContext* context, const  SearchRequest* req, SearchReply* reply) override {
-        SearchReply_User *user  =reply->add_users();
-        user->set_name("wida",4);
-        user->set_distance(5.6);
-        reply->add_users()->set_name("wwwxxxx",7);
-        reply->add_users()->set_distance(8.885);
+
+        float feature[512] = {0};
+        for (int i=0;i< req->feature().size();i++){
+            feature[i] = req->feature(i);
+        }
+
+        cout << req->group() << endl;
+        facedb->search("",req->group(),feature);
+
+        SearchReply_User *retUser =  reply->add_users();
+        retUser->set_name("wida");
+        retUser->set_distance(10);
+
+
         return Status::OK;
     }
 
     Status AddUser(ServerContext* context, const  UserInfo* req, NomalReply* reply) override {
-        int size = req->feature_size();
-        Feature feature;
+        int size = req->feature().feature_size();
+        float feature[512] = {0};
         for (int i=0;i< size;i++){
-            feature.add_feature(req->feature(i));
+            feature[i] = req->feature().feature(i);
         }
+        db::User user;
+        user.feature = feature;
+        user.id = req->id();
+        facedb->addUser(user);
         reply->set_ret(true);
         return Status::OK;
     }
@@ -77,10 +91,8 @@ string cwd() {
 }
 
 
-
 int  RunServer() {
     INI *conf = INI::getInstance();
-    //cout << cwd() << endl;
     if (!conf->open("/home/wida/cppworkspace/damo/etc/conf.conf")){
         cout << "dd" <<endl;
         return  -1;
@@ -96,56 +108,9 @@ int  RunServer() {
     server->Wait();
 }
 
-
-
 int main() {
-    /*rocksdb::Options options;
-    options.create_if_missing = true;
-    db::DB db(options,"/tmp/testdb");
-    db.Put("key1","wida");
-    string a;
-    db.Get("key1",&a);
-    cout << a << endl;
-
-    db.Delete("key1");
-    int ret = db.Get("key1",&a);
-
-    cout << ret << endl;
-    cout << a << endl;
-
-
-
-    Feature feature;
-
-    feature.add_feature(1.55);
-    feature.add_feature(0.52);
-    feature.add_feature(0.52);
-    feature.add_feature(0.52);
-    feature.add_feature(0.52);
-    feature.add_feature(0.52);
-
-
-
-
-    size_t length = feature.ByteSizeLong();
-
-    cout << length << endl;
-    char* buf = new char[length];
-    feature.SerializeToArray(buf,length);
-
-
-    cout << string(buf) << endl;
-
-    delete buf;
-    return 0;*/
-
     app_log_init("/home/wida/cppworkspace/damo/log/",_APP_TRACE,"log.",0);
-
-
-    APP_WARN_LOG("fsdfdsf %s","aaa");
-
+    //APP_WARN_LOG("fsdfdsf %s","aaa");
     RunServer();
-
     return 0;
-
 }

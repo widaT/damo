@@ -3,7 +3,9 @@
 //
 #include "db.h"
 namespace db {
-    DB::DB(rocksdb::Options options , std::string path) {
+    DB::DB(std::string path) {
+        rocksdb::Options options;
+        options.create_if_missing = true;
         rocksdb::Status status = rocksdb::DB::Open(options, path ,&db);
         assert(status.ok());
     }

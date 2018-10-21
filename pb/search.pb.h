@@ -41,7 +41,7 @@ struct TableStruct_search_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::google::protobuf::internal::ParseTable schema[6]
+  static const ::google::protobuf::internal::ParseTable schema[7]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
@@ -49,6 +49,9 @@ struct TableStruct_search_2eproto {
 };
 void AddDescriptors_search_2eproto();
 namespace pb {
+class Feature;
+class FeatureDefaultTypeInternal;
+extern FeatureDefaultTypeInternal _Feature_default_instance_;
 class GroupsReply;
 class GroupsReplyDefaultTypeInternal;
 extern GroupsReplyDefaultTypeInternal _GroupsReply_default_instance_;
@@ -70,6 +73,7 @@ extern UserInfoDefaultTypeInternal _UserInfo_default_instance_;
 }  // namespace pb
 namespace google {
 namespace protobuf {
+template<> ::pb::Feature* Arena::CreateMaybeMessage<::pb::Feature>(Arena*);
 template<> ::pb::GroupsReply* Arena::CreateMaybeMessage<::pb::GroupsReply>(Arena*);
 template<> ::pb::NomalReply* Arena::CreateMaybeMessage<::pb::NomalReply>(Arena*);
 template<> ::pb::SearchReply* Arena::CreateMaybeMessage<::pb::SearchReply>(Arena*);
@@ -81,6 +85,124 @@ template<> ::pb::UserInfo* Arena::CreateMaybeMessage<::pb::UserInfo>(Arena*);
 namespace pb {
 
 // ===================================================================
+
+class Feature : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.Feature) */ {
+ public:
+  Feature();
+  virtual ~Feature();
+
+  Feature(const Feature& from);
+
+  inline Feature& operator=(const Feature& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Feature(Feature&& from) noexcept
+    : Feature() {
+    *this = ::std::move(from);
+  }
+
+  inline Feature& operator=(Feature&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return default_instance().GetDescriptor();
+  }
+  static const Feature& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Feature* internal_default_instance() {
+    return reinterpret_cast<const Feature*>(
+               &_Feature_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(Feature* other);
+  friend void swap(Feature& a, Feature& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Feature* New() const final {
+    return CreateMaybeMessage<Feature>(NULL);
+  }
+
+  Feature* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Feature>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Feature& from);
+  void MergeFrom(const Feature& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  static const char* _InternalParse(const char* begin, const char* end, void* object, ::google::protobuf::internal::ParseContext* ctx);
+  ::google::protobuf::internal::ParseFunc _ParseFunc() const final { return _InternalParse; }
+  #else
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Feature* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // repeated float feature = 1;
+  int feature_size() const;
+  void clear_feature();
+  static const int kFeatureFieldNumber = 1;
+  float feature(int index) const;
+  void set_feature(int index, float value);
+  void add_feature(float value);
+  const ::google::protobuf::RepeatedField< float >&
+      feature() const;
+  ::google::protobuf::RepeatedField< float >*
+      mutable_feature();
+
+  // @@protoc_insertion_point(class_scope:pb.Feature)
+ private:
+  class HasBitSetters;
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::RepeatedField< float > feature_;
+  mutable std::atomic<int> _feature_cached_byte_size_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_search_2eproto;
+};
+// -------------------------------------------------------------------
 
 class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.UserInfo) */ {
  public:
@@ -119,7 +241,7 @@ class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_UserInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(UserInfo* other);
   friend void swap(UserInfo& a, UserInfo& b) {
@@ -176,18 +298,6 @@ class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
 
   // accessors -------------------------------------------------------
 
-  // repeated float feature = 2;
-  int feature_size() const;
-  void clear_feature();
-  static const int kFeatureFieldNumber = 2;
-  float feature(int index) const;
-  void set_feature(int index, float value);
-  void add_feature(float value);
-  const ::google::protobuf::RepeatedField< float >&
-      feature() const;
-  ::google::protobuf::RepeatedField< float >*
-      mutable_feature();
-
   // string id = 1;
   void clear_id();
   static const int kIdFieldNumber = 1;
@@ -202,14 +312,22 @@ class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
   ::std::string* release_id();
   void set_allocated_id(::std::string* id);
 
+  // .pb.Feature feature = 2;
+  bool has_feature() const;
+  void clear_feature();
+  static const int kFeatureFieldNumber = 2;
+  const ::pb::Feature& feature() const;
+  ::pb::Feature* release_feature();
+  ::pb::Feature* mutable_feature();
+  void set_allocated_feature(::pb::Feature* feature);
+
   // @@protoc_insertion_point(class_scope:pb.UserInfo)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedField< float > feature_;
-  mutable std::atomic<int> _feature_cached_byte_size_;
   ::google::protobuf::internal::ArenaStringPtr id_;
+  ::pb::Feature* feature_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_search_2eproto;
 };
@@ -252,7 +370,7 @@ class NomalReply : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_NomalReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(NomalReply* other);
   friend void swap(NomalReply& a, NomalReply& b) {
@@ -363,7 +481,7 @@ class GroupsReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_GroupsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(GroupsReply* other);
   friend void swap(GroupsReply& a, GroupsReply& b) {
@@ -490,7 +608,7 @@ class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_SearchRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
   void Swap(SearchRequest* other);
   friend void swap(SearchRequest& a, SearchRequest& b) {
@@ -547,25 +665,40 @@ class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
 
   // accessors -------------------------------------------------------
 
-  // repeated float name = 1;
-  int name_size() const;
-  void clear_name();
-  static const int kNameFieldNumber = 1;
-  float name(int index) const;
-  void set_name(int index, float value);
-  void add_name(float value);
+  // repeated float feature = 2;
+  int feature_size() const;
+  void clear_feature();
+  static const int kFeatureFieldNumber = 2;
+  float feature(int index) const;
+  void set_feature(int index, float value);
+  void add_feature(float value);
   const ::google::protobuf::RepeatedField< float >&
-      name() const;
+      feature() const;
   ::google::protobuf::RepeatedField< float >*
-      mutable_name();
+      mutable_feature();
+
+  // string group = 1;
+  void clear_group();
+  static const int kGroupFieldNumber = 1;
+  const ::std::string& group() const;
+  void set_group(const ::std::string& value);
+  #if LANG_CXX11
+  void set_group(::std::string&& value);
+  #endif
+  void set_group(const char* value);
+  void set_group(const char* value, size_t size);
+  ::std::string* mutable_group();
+  ::std::string* release_group();
+  void set_allocated_group(::std::string* group);
 
   // @@protoc_insertion_point(class_scope:pb.SearchRequest)
  private:
   class HasBitSetters;
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedField< float > name_;
-  mutable std::atomic<int> _name_cached_byte_size_;
+  ::google::protobuf::RepeatedField< float > feature_;
+  mutable std::atomic<int> _feature_cached_byte_size_;
+  ::google::protobuf::internal::ArenaStringPtr group_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_search_2eproto;
 };
@@ -608,7 +741,7 @@ class SearchReply_User : public ::google::protobuf::Message /* @@protoc_insertio
                &_SearchReply_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    5;
 
   void Swap(SearchReply_User* other);
   friend void swap(SearchReply_User& a, SearchReply_User& b) {
@@ -734,7 +867,7 @@ class SearchReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_SearchReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    6;
 
   void Swap(SearchReply* other);
   friend void swap(SearchReply& a, SearchReply& b) {
@@ -823,6 +956,40 @@ class SearchReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Feature
+
+// repeated float feature = 1;
+inline int Feature::feature_size() const {
+  return feature_.size();
+}
+inline void Feature::clear_feature() {
+  feature_.Clear();
+}
+inline float Feature::feature(int index) const {
+  // @@protoc_insertion_point(field_get:pb.Feature.feature)
+  return feature_.Get(index);
+}
+inline void Feature::set_feature(int index, float value) {
+  feature_.Set(index, value);
+  // @@protoc_insertion_point(field_set:pb.Feature.feature)
+}
+inline void Feature::add_feature(float value) {
+  feature_.Add(value);
+  // @@protoc_insertion_point(field_add:pb.Feature.feature)
+}
+inline const ::google::protobuf::RepeatedField< float >&
+Feature::feature() const {
+  // @@protoc_insertion_point(field_list:pb.Feature.feature)
+  return feature_;
+}
+inline ::google::protobuf::RepeatedField< float >*
+Feature::mutable_feature() {
+  // @@protoc_insertion_point(field_mutable_list:pb.Feature.feature)
+  return &feature_;
+}
+
+// -------------------------------------------------------------------
+
 // UserInfo
 
 // string id = 1;
@@ -878,34 +1045,55 @@ inline void UserInfo::set_allocated_id(::std::string* id) {
   // @@protoc_insertion_point(field_set_allocated:pb.UserInfo.id)
 }
 
-// repeated float feature = 2;
-inline int UserInfo::feature_size() const {
-  return feature_.size();
+// .pb.Feature feature = 2;
+inline bool UserInfo::has_feature() const {
+  return this != internal_default_instance() && feature_ != NULL;
 }
 inline void UserInfo::clear_feature() {
-  feature_.Clear();
+  if (GetArenaNoVirtual() == NULL && feature_ != NULL) {
+    delete feature_;
+  }
+  feature_ = NULL;
 }
-inline float UserInfo::feature(int index) const {
+inline const ::pb::Feature& UserInfo::feature() const {
+  const ::pb::Feature* p = feature_;
   // @@protoc_insertion_point(field_get:pb.UserInfo.feature)
-  return feature_.Get(index);
+  return p != NULL ? *p : *reinterpret_cast<const ::pb::Feature*>(
+      &::pb::_Feature_default_instance_);
 }
-inline void UserInfo::set_feature(int index, float value) {
-  feature_.Set(index, value);
-  // @@protoc_insertion_point(field_set:pb.UserInfo.feature)
+inline ::pb::Feature* UserInfo::release_feature() {
+  // @@protoc_insertion_point(field_release:pb.UserInfo.feature)
+  
+  ::pb::Feature* temp = feature_;
+  feature_ = NULL;
+  return temp;
 }
-inline void UserInfo::add_feature(float value) {
-  feature_.Add(value);
-  // @@protoc_insertion_point(field_add:pb.UserInfo.feature)
-}
-inline const ::google::protobuf::RepeatedField< float >&
-UserInfo::feature() const {
-  // @@protoc_insertion_point(field_list:pb.UserInfo.feature)
+inline ::pb::Feature* UserInfo::mutable_feature() {
+  
+  if (feature_ == NULL) {
+    auto* p = CreateMaybeMessage<::pb::Feature>(GetArenaNoVirtual());
+    feature_ = p;
+  }
+  // @@protoc_insertion_point(field_mutable:pb.UserInfo.feature)
   return feature_;
 }
-inline ::google::protobuf::RepeatedField< float >*
-UserInfo::mutable_feature() {
-  // @@protoc_insertion_point(field_mutable_list:pb.UserInfo.feature)
-  return &feature_;
+inline void UserInfo::set_allocated_feature(::pb::Feature* feature) {
+  ::google::protobuf::Arena* message_arena = GetArenaNoVirtual();
+  if (message_arena == NULL) {
+    delete feature_;
+  }
+  if (feature) {
+    ::google::protobuf::Arena* submessage_arena = NULL;
+    if (message_arena != submessage_arena) {
+      feature = ::google::protobuf::internal::GetOwnedMessage(
+          message_arena, feature, submessage_arena);
+    }
+    
+  } else {
+    
+  }
+  feature_ = feature;
+  // @@protoc_insertion_point(field_set_allocated:pb.UserInfo.feature)
 }
 
 // -------------------------------------------------------------------
@@ -1003,34 +1191,87 @@ GroupsReply::mutable_grops() {
 
 // SearchRequest
 
-// repeated float name = 1;
-inline int SearchRequest::name_size() const {
-  return name_.size();
+// string group = 1;
+inline void SearchRequest::clear_group() {
+  group_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
-inline void SearchRequest::clear_name() {
-  name_.Clear();
+inline const ::std::string& SearchRequest::group() const {
+  // @@protoc_insertion_point(field_get:pb.SearchRequest.group)
+  return group_.GetNoArena();
 }
-inline float SearchRequest::name(int index) const {
-  // @@protoc_insertion_point(field_get:pb.SearchRequest.name)
-  return name_.Get(index);
+inline void SearchRequest::set_group(const ::std::string& value) {
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:pb.SearchRequest.group)
 }
-inline void SearchRequest::set_name(int index, float value) {
-  name_.Set(index, value);
-  // @@protoc_insertion_point(field_set:pb.SearchRequest.name)
+#if LANG_CXX11
+inline void SearchRequest::set_group(::std::string&& value) {
+  
+  group_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:pb.SearchRequest.group)
 }
-inline void SearchRequest::add_name(float value) {
-  name_.Add(value);
-  // @@protoc_insertion_point(field_add:pb.SearchRequest.name)
+#endif
+inline void SearchRequest::set_group(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:pb.SearchRequest.group)
+}
+inline void SearchRequest::set_group(const char* value, size_t size) {
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:pb.SearchRequest.group)
+}
+inline ::std::string* SearchRequest::mutable_group() {
+  
+  // @@protoc_insertion_point(field_mutable:pb.SearchRequest.group)
+  return group_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* SearchRequest::release_group() {
+  // @@protoc_insertion_point(field_release:pb.SearchRequest.group)
+  
+  return group_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void SearchRequest::set_allocated_group(::std::string* group) {
+  if (group != NULL) {
+    
+  } else {
+    
+  }
+  group_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), group);
+  // @@protoc_insertion_point(field_set_allocated:pb.SearchRequest.group)
+}
+
+// repeated float feature = 2;
+inline int SearchRequest::feature_size() const {
+  return feature_.size();
+}
+inline void SearchRequest::clear_feature() {
+  feature_.Clear();
+}
+inline float SearchRequest::feature(int index) const {
+  // @@protoc_insertion_point(field_get:pb.SearchRequest.feature)
+  return feature_.Get(index);
+}
+inline void SearchRequest::set_feature(int index, float value) {
+  feature_.Set(index, value);
+  // @@protoc_insertion_point(field_set:pb.SearchRequest.feature)
+}
+inline void SearchRequest::add_feature(float value) {
+  feature_.Add(value);
+  // @@protoc_insertion_point(field_add:pb.SearchRequest.feature)
 }
 inline const ::google::protobuf::RepeatedField< float >&
-SearchRequest::name() const {
-  // @@protoc_insertion_point(field_list:pb.SearchRequest.name)
-  return name_;
+SearchRequest::feature() const {
+  // @@protoc_insertion_point(field_list:pb.SearchRequest.feature)
+  return feature_;
 }
 inline ::google::protobuf::RepeatedField< float >*
-SearchRequest::mutable_name() {
-  // @@protoc_insertion_point(field_mutable_list:pb.SearchRequest.name)
-  return &name_;
+SearchRequest::mutable_feature() {
+  // @@protoc_insertion_point(field_mutable_list:pb.SearchRequest.feature)
+  return &feature_;
 }
 
 // -------------------------------------------------------------------
@@ -1141,6 +1382,8 @@ SearchReply::users() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
