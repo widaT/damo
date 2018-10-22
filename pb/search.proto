@@ -18,8 +18,9 @@ message Feature {
 }
 
 message UserInfo{
-    string id = 1;
-    Feature feature = 2;
+    string group =1;
+    string id = 2;
+    Feature feature = 3;
 }
 
 message NomalReply{

@@ -8,7 +8,6 @@
 #include <string>
 #include "db.h"
 #include "../pb/search.pb.h"
-
 namespace db{
     struct User  {
         std::string id;
@@ -25,8 +24,8 @@ namespace db{
 
     public:
         static Facedb* getInstance();
-        int search(std::string ,std::string, float *);
-        int addUser(User);
+        int search(std::string , float *,std::vector<pb::SearchReply_User> &);
+        int addUser(std::string ,std::string ,float *);
         ~Facedb();
     };
 

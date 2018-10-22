@@ -3,16 +3,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
-#include <errno.h>
+//#include <errno.h>
 #include <fcntl.h>
-#include <sys/stat.h>
+//#include <sys/stat.h>
 #include <sys/mman.h>
 #include <unistd.h>
 #include <time.h>
 #include <stdio.h>
 #include "log.h"
 
-#define APP_MAX_LOG_CNT	1000
+//#define APP_MAX_LOG_CNT	1000
 static int app_has_init = 0;
 static int app_log_level;
 static u_int app_log_size;
@@ -153,4 +153,3 @@ int app_log_init (const char* dir, int lvl, const char* pre_name,int  prehour)
 	ret_code = 0;
     return 0;
 }
-

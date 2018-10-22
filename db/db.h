@@ -6,6 +6,7 @@
 #define TEST_DB_H
 #include <rocksdb/db.h>
 #include "string"
+#include "../pb/search.pb.h"
 namespace db {
     class DB {
     private:
@@ -14,9 +15,10 @@ namespace db {
         rocksdb::ReadOptions ro = rocksdb::ReadOptions();
     public:
         DB(std::string);
-        int Put(std::string, std::string);
-        int Get(std::string, std::string *);
+        int Put(std::string, std::string,float *feature);
+        int Get(std::string key, std::string id,float * feautre);
         int Delete(std::string);
+        int Search(std::string,float *,std::vector<pb::SearchReply_User> &);
         ~DB();
     };
 }
