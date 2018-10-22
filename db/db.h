@@ -17,7 +17,7 @@ namespace db {
         DB(std::string);
         int Put(std::string, std::string,float *feature);
         int Get(std::string key, std::string id,float * feautre);
-        int Delete(std::string);
+        int Delete(std::string, std::string);
         int Search(std::string,float *,std::vector<pb::SearchReply_User> &);
         ~DB();
     };

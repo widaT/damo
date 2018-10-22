@@ -39,16 +39,39 @@ class SearchServiceImpl final : public ::Facedb::Service {
     }
 
     Status AddUser(ServerContext* context, const  UserInfo* req, NomalReply* reply) override {
-        int size = req->feature().feature_size();
+        int size = req->feature_size();
         float feature[512] = {0};
         for (int i=0;i< size;i++){
-            feature[i] = req->feature().feature(i);
+            feature[i] = req->feature(i);
         }
-
         int ret = facedb->addUser(req->group(),req->id(),feature);
         reply->set_ret(0 == ret ? true : false);
         return Status::OK;
     }
+
+    Status GetUser(ServerContext *context, const UserInfo *req, UserInfo *reply) override {
+        float feature[512] = {0};
+        int ret = facedb->getUser(req->group(),req->id(),feature);
+        if (ret == 0) {
+            reply->set_id(req->id());
+            reply->set_group(req->group());
+            for (int i=0;i<512;i++){
+                reply->add_feature(feature[i]);
+            }
+        }
+        return Status::OK;
+    }
+
+    Status DelUser(ServerContext *context, const UserInfo *req, NomalReply *reply) override {
+        int ret = facedb->delUser(req->group(),req->id());
+        reply->set_ret(ret == 0?true: false);
+        return Status::OK;
+    }
+
+    Status GroupList(ServerContext *context, const SearchRequest *req, GroupsReply *reply) override {
+        return Status::OK;
+    }
+
 };
 
 string cwd() {

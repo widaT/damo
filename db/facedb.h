@@ -26,6 +26,8 @@ namespace db{
         static Facedb* getInstance();
         int search(std::string , float *,std::vector<pb::SearchReply_User> &);
         int addUser(std::string ,std::string ,float *);
+        int getUser(std::string ,std::string ,float *);
+        int delUser(std::string ,std::string);
         ~Facedb();
     };
 

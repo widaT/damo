@@ -81,14 +81,6 @@ namespace db {
         return 0;
     }
 
-    int DB::Delete(string key) {
-        rocksdb::Status status =  db->Delete(wo, key);
-        if (!status.ok()) {
-            return -1;
-        }
-        return 0;
-    }
-
     int DB::Search(string group,float * feature,vector<pb::SearchReply_User> &users) {
         auto iter = db->NewIterator(ro);
         float ifeautre[FEATURE_SIZE] = {0};
@@ -111,6 +103,15 @@ namespace db {
             }
             sort(users.begin(),users.end(),cmp);
         }
+    }
+
+    int DB::Delete(string group,string id) {
+        group = group + SPLIT_STR + id;
+        rocksdb::Status status =  db->Delete(wo, group);
+        if (!status.ok()) {
+            return -1;
+        }
+        return 0;
     }
 
     DB::~DB() {

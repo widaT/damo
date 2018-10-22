@@ -20,7 +20,7 @@ message Feature {
 message UserInfo{
     string group =1;
     string id = 2;
-    Feature feature = 3;
+    repeated float feature = 3;
 }
 
 message NomalReply{
