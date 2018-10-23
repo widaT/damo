@@ -85,10 +85,6 @@ string cwd() {
 
 int RunServer() {
     INI *conf = INI::getInstance();
-    if (!conf->open("/home/wida/cppworkspace/damo/etc/conf.conf")) {
-        cout << "dd" << endl;
-        return -1;
-    }
     string port = conf->read("base", "port");
     std::string server_address("0.0.0.0:" + port);
     SearchServiceImpl service;
@@ -101,7 +97,7 @@ int RunServer() {
 }
 
 int main() {
-    app_log_init("/home/wida/cppworkspace/damo/log/", _APP_TRACE, "log.", 0);
+    app_log_init(INI::getInstance()->read("base","logpath").c_str(), _APP_TRACE, "log.", 0);
     //APP_WARN_LOG("fsdfdsf %s","aaa");
     RunServer();
     return 0;

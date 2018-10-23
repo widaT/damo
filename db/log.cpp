@@ -150,6 +150,6 @@ int app_log_init (const char* dir, int lvl, const char* pre_name,int  prehour)
 		app_fds_info[i].opfd = -1;
 	}
 	app_has_init = 1;
-	ret_code = 0;
     return 0;
 }
+

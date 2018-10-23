@@ -3,11 +3,13 @@
 //
 
 #include "facedb.h"
-
+#include "ini.h"
 using namespace std;
+using namespace config;
 namespace db {
     Facedb *Facedb::instance = new Facedb();
-    DB *db = new DB("/tmp/testdb");
+
+    DB *db = new DB(INI::getInstance()->read("db","path"));
 
     Facedb *Facedb::getInstance() {
         return Facedb::instance;

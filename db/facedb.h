@@ -10,11 +10,6 @@
 #include "../pb/search.pb.h"
 
 namespace db {
-    struct User {
-        std::string id;
-        float *feature;
-    };
-
     class Facedb {
     private:
         Facedb();

@@ -9,7 +9,6 @@ using namespace pb;
 namespace db {
     const string SPLIT_STR = "--+++--";
 
-
     bool cmp(SearchReply_User x, SearchReply_User y) {
         return x.distance() < y.distance();
     }

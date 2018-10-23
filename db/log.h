@@ -3,7 +3,6 @@
 #include <sys/cdefs.h>
 #include <sys/types.h>
 #include <arpa/inet.h>
-//#include "func.h"
 using namespace std;
 
 #ifndef likely

@@ -7,8 +7,8 @@
 #include <immintrin.h>
 #include <sstream>
 #include <iostream>
-
 #define FEATURE_SIZE 512  //特征值大小
+#define COMMON_CONFIG "/home/wida/cppworkspace/damo/etc/conf.conf" //配置文件的目录
 
 float distance(float *, float *);
 void pack(float *, std::string &);
@@ -28,4 +28,5 @@ inline float avx_euclidean_distance(float *x, float *y) { //inline 函数体需�
     _mm256_store_ps(t, vsum);
     return t[0] + t[1] + t[2] + t[3] + t[4] + t[5] + t[6] + t[7];
 }
+
 #endif //DAMO_COMMON_H

@@ -1,9 +1,12 @@
 #include "ini.h"
-
+#include "common.h"
 namespace config {
-	INI *INI::instance = nullptr;
+	INI *INI::instance = new INI();
 
 	INI::INI(){
+#ifdef COMMON_CONFIG
+		open(COMMON_CONFIG);
+#endif
 	}
 
 	INI::~INI(){
