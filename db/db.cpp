@@ -13,7 +13,7 @@ namespace db {
         return x.distance() < y.distance();
     }
 
-    DB::DB(string path) {
+    DB::DB(string path){
         rocksdb::Options options;
         options.create_if_missing = true;
         rocksdb::Status status = rocksdb::DB::Open(options, path, &db);
@@ -22,7 +22,7 @@ namespace db {
         for (iter->Seek(GROUP_PREFIX); iter->Valid() && iter->key().starts_with(GROUP_PREFIX); iter->Next()) {
             auto key = iter->key();
             key.remove_prefix(string(GROUP_PREFIX).size());
-            groupMap[key.data()] =  atoi(iter->value().data());
+            groupMap[key.ToString()] =  atoi(iter->value().data());
         }
     }
 
@@ -31,7 +31,7 @@ namespace db {
         mutex.lock();
         if (groupMap.find(group) == groupMap.end()){
             groupMap[group] = 1;
-            status = db->Put(wo,GROUP_PREFIX+group,std::to_string(1));
+            status = db->Put(wo,GROUP_PREFIX+group,to_string(1));
             if (!status.ok()) {
                 mutex.unlock();
                 return -1;
@@ -68,14 +68,14 @@ namespace db {
             key.remove_prefix((group + SPLIT_STR).size());
             if (users.size() < 5) {
                 SearchReply_User user;
-                user.set_name(key.data());
+                user.set_name(key.ToString());
                 user.set_distance(distance);
                 users.push_back(user);
 
             } else {
                 if (users.end()->distance() > distance) {
                     users.end()->set_distance(distance);
-                    users.end()->set_name(key.data());
+                    users.end()->set_name(key.ToString());
                 }
             }
             sort(users.begin(), users.end(), cmp);
@@ -96,7 +96,6 @@ namespace db {
         mutex.lock();
         size_t ret = groupMap.erase(group);
         mutex.unlock();
-
         //@todo 非线程安全 需要改进
         if (ret == 1) {
             rocksdb::Status status = db->Delete(wo,GROUP_PREFIX+group);
@@ -105,7 +104,8 @@ namespace db {
             }
             //删除用户
             auto iter = db->NewIterator(ro);
-            for (iter->Seek(group); iter->Valid() && iter->key().starts_with(group); iter->Next()) {
+            string prefix(group + SPLIT_STR);
+            for (iter->Seek(prefix); iter->Valid() && iter->key().starts_with(prefix); iter->Next()) {
                 db->Delete(wo,iter->key());
             }
         }
@@ -126,11 +126,11 @@ namespace db {
     int DB::UserList(string group, string startkey, int num,vector<string> & users) {
         auto iter = db->NewIterator(ro);
         int n = 0;
-        for (iter->Seek(group); iter->Valid() && iter->key().starts_with(group) && n <num; iter->Next()) {
-            auto sfeature = iter->value().ToString();
+        string prifex(group+SPLIT_STR);
+        for (iter->Seek(prifex + startkey); iter->Valid() && iter->key().starts_with(prifex) && n <num; iter->Next()) {
             auto key = iter->key();
-            key.remove_prefix((group + SPLIT_STR).size());
-            users.push_back(key.data());
+            key.remove_prefix(prifex.size());
+            users.emplace_back(key.ToString());
             n++;
         }
         return 0;

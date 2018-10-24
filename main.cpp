@@ -14,7 +14,7 @@ using grpc::ServerBuilder;
 using grpc::ServerContext;
 using grpc::Status;
 
-static db::Facedb *facedb = db::Facedb::getInstance();
+static db::Facedb *facedb = db::Facedb::GetInstance();
 
 class SearchServiceImpl final : public ::Facedb::Service {
     Status Search(ServerContext *context, const SearchRequest *req, SearchReply *reply) override {
@@ -23,15 +23,12 @@ class SearchServiceImpl final : public ::Facedb::Service {
             feature[i] = req->feature(i);
         }
         vector<SearchReply_User> user;
-        facedb->search(req->group(), feature, user);
-        if (!user.empty()) {
-            for (auto iter = user.begin(); iter != user.end(); iter++) {
-                auto *retUser = reply->add_users();
-                retUser->set_name(iter->name());
-                retUser->set_distance(iter->distance());
-            }
-        } else {
-            reply->clear_users();
+        facedb->Search(req->group(), feature, user);
+        for (auto &iter : user) {
+            SearchReply_User *retUser;
+            retUser = reply->add_users();
+            retUser->set_name(iter.name());
+            retUser->set_distance(iter.distance());
         }
         return Status::OK;
     }
@@ -42,18 +39,18 @@ class SearchServiceImpl final : public ::Facedb::Service {
         for (int i = 0; i < size; i++) {
             feature[i] = req->feature(i);
         }
-        int ret = facedb->addUser(req->group(), req->id(), feature);
+        int ret = facedb->AddUser(req->group(), req->id(), feature);
         reply->set_ret(0 == ret);
         return Status::OK;
     }
 
     Status GetUser(ServerContext *context, const UserInfo *req, UserInfo *reply) override {
         float feature[FEATURE_SIZE] = {0};
-        int ret = facedb->getUser(req->group(), req->id(), feature);
+        int ret = facedb->GetUser(req->group(), req->id(), feature);
         if (ret == 0) {
             reply->set_id(req->id());
             reply->set_group(req->group());
-            for (auto i : feature) {
+            for (auto &i:feature) {
                 reply->add_feature(i);
             }
         }
@@ -61,20 +58,16 @@ class SearchServiceImpl final : public ::Facedb::Service {
     }
 
     Status DelUser(ServerContext *context, const UserInfo *req, NomalReply *reply) override {
-        int ret = facedb->delUser(req->group(), req->id());
+        int ret = facedb->DelUser(req->group(), req->id());
         reply->set_ret(ret == 0);
         return Status::OK;
     }
 
     Status GroupList(ServerContext *context, const Null *req, StringsReply *reply) override {
         vector<string> groups;
-        int ret = facedb->groupList(groups);
-        if (ret == -1) {
-            reply->add_values();
-        }else {
-            for(auto i:groups) {
-                reply->add_values(i);
-            }
+        facedb->GroupList(groups);
+        for (auto &i:groups) {
+            reply->add_values(i);
         }
         return Status::OK;
     }
@@ -82,23 +75,18 @@ class SearchServiceImpl final : public ::Facedb::Service {
 
     Status UserList(ServerContext *context, const UserListReq *req, StringsReply *reply) override {
         vector<string> users;
-        int ret = facedb->userList(req->group(),req->skey(),req->num(),users);
-        if (ret == -1) {
-            reply->add_values();
-        }else {
-            for(auto i:users) {
-                reply->add_values(i);
-            }
+        facedb->UserList(req->group(), req->skey(), req->num(), users);
+        for (auto &i:users) {
+            reply->add_values(i);
         }
         return Status::OK;
     }
 
     Status DelGroup(ServerContext *context, const Group *req, NomalReply *reply) override {
-        reply->set_ret(facedb->delgroup(req->group()) == 0);
+        reply->set_ret(facedb->Delgroup(req->group()) == 0);
         return Status::OK;
     }
 };
-
 
 
 int RunServer() {
@@ -115,7 +103,7 @@ int RunServer() {
 }
 
 int main() {
-   // APP_WARN_LOG("fsdfdsf %s","aaa");
+    // APP_WARN_LOG("fsdfdsf %s","aaa");
     RunServer();
     return 0;
 }

@@ -22,21 +22,21 @@ namespace db {
         static Facedb *instance;
 
     public:
-        static Facedb *getInstance();
+        static Facedb *GetInstance();
 
-        int search(std::string, float *, std::vector<pb::SearchReply_User> &);
+        int Search(std::string, float *, std::vector<pb::SearchReply_User> &);
 
-        int addUser(std::string, std::string, float *);
+        int AddUser(std::string, std::string, float *);
 
-        int getUser(std::string, std::string, float *);
+        int GetUser(std::string, std::string, float *);
 
-        int delUser(std::string, std::string);
+        int DelUser(std::string, std::string);
 
-        int groupList(std::vector<std::string> &);
+        int GroupList(std::vector<std::string> &);
 
-        int userList(std::string,std::string,int num,std::vector<std::string>&);
+        int UserList(std::string,std::string,int num,std::vector<std::string>&);
 
-        int delgroup(std::string);
+        int Delgroup(std::string);
 
         ~Facedb();
     };
