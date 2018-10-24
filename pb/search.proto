@@ -7,11 +7,16 @@ package pb;
 
 service Facedb {
     rpc Search (SearchRequest) returns (SearchReply) {}
-    rpc GroupList(SearchRequest) returns (GroupsReply) {}
+    rpc GroupList(Null) returns (StringsReply) {}
     rpc AddUser(UserInfo) returns (NomalReply) {}
     rpc GetUser(UserInfo) returns (UserInfo) {}
     rpc DelUser(UserInfo) returns (NomalReply) {}
+    rpc UserList(UserListReq) returns (StringsReply) {}
+    rpc DelGroup(Group) returns (NomalReply) {}
 }
+
+
+message Null {}
 
 message Feature {
     repeated float feature = 1;
@@ -27,8 +32,18 @@ message NomalReply{
     bool ret = 1;
 }
 
-message GroupsReply{
-    repeated string grops = 1;
+message StringsReply{
+    repeated string values = 1;
+}
+
+message Group{
+    string group = 1;
+}
+
+message UserListReq {
+    string group =1;
+    string skey = 2;
+    int32 num = 3 ;
 }
 
 message SearchRequest {

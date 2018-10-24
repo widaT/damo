@@ -32,6 +32,12 @@ namespace db {
 
         int delUser(std::string, std::string);
 
+        int groupList(std::vector<std::string> &);
+
+        int userList(std::string,std::string,int num,std::vector<std::string>&);
+
+        int delgroup(std::string);
+
         ~Facedb();
     };
 

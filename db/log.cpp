@@ -11,6 +11,7 @@
 #include <time.h>
 #include <stdio.h>
 #include "log.h"
+#include "ini.h"
 
 //#define APP_MAX_LOG_CNT	1000
 static int app_has_init = 0;
@@ -24,6 +25,8 @@ static struct fds_t {
 	u_short day;
 } app_fds_info[_APP_TRACE + 1];
 static char* app_log_buffer = (char*)MAP_FAILED;
+//init log
+static int a  = app_log_init(config::INI::getInstance()->read("base","logpath").c_str(), _APP_TRACE, "log.", 0);
 
 static inline void app_log_file_name(int lvl, char* file_name, time_t now)
 {

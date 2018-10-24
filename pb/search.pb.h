@@ -38,7 +38,7 @@ namespace protobuf_search_2eproto {
 struct TableStruct {
   static const ::google::protobuf::internal::ParseTableField entries[];
   static const ::google::protobuf::internal::AuxillaryParseTableField aux[];
-  static const ::google::protobuf::internal::ParseTable schema[7];
+  static const ::google::protobuf::internal::ParseTable schema[10];
   static const ::google::protobuf::internal::FieldMetadata field_metadata[];
   static const ::google::protobuf::internal::SerializationTable serialization_table[];
   static const ::google::protobuf::uint32 offsets[];
@@ -49,12 +49,15 @@ namespace pb {
 class Feature;
 class FeatureDefaultTypeInternal;
 extern FeatureDefaultTypeInternal _Feature_default_instance_;
-class GroupsReply;
-class GroupsReplyDefaultTypeInternal;
-extern GroupsReplyDefaultTypeInternal _GroupsReply_default_instance_;
+class Group;
+class GroupDefaultTypeInternal;
+extern GroupDefaultTypeInternal _Group_default_instance_;
 class NomalReply;
 class NomalReplyDefaultTypeInternal;
 extern NomalReplyDefaultTypeInternal _NomalReply_default_instance_;
+class Null;
+class NullDefaultTypeInternal;
+extern NullDefaultTypeInternal _Null_default_instance_;
 class SearchReply;
 class SearchReplyDefaultTypeInternal;
 extern SearchReplyDefaultTypeInternal _SearchReply_default_instance_;
@@ -64,24 +67,129 @@ extern SearchReply_UserDefaultTypeInternal _SearchReply_User_default_instance_;
 class SearchRequest;
 class SearchRequestDefaultTypeInternal;
 extern SearchRequestDefaultTypeInternal _SearchRequest_default_instance_;
+class StringsReply;
+class StringsReplyDefaultTypeInternal;
+extern StringsReplyDefaultTypeInternal _StringsReply_default_instance_;
 class UserInfo;
 class UserInfoDefaultTypeInternal;
 extern UserInfoDefaultTypeInternal _UserInfo_default_instance_;
+class UserListReq;
+class UserListReqDefaultTypeInternal;
+extern UserListReqDefaultTypeInternal _UserListReq_default_instance_;
 }  // namespace pb
 namespace google {
 namespace protobuf {
 template<> ::pb::Feature* Arena::CreateMaybeMessage<::pb::Feature>(Arena*);
-template<> ::pb::GroupsReply* Arena::CreateMaybeMessage<::pb::GroupsReply>(Arena*);
+template<> ::pb::Group* Arena::CreateMaybeMessage<::pb::Group>(Arena*);
 template<> ::pb::NomalReply* Arena::CreateMaybeMessage<::pb::NomalReply>(Arena*);
+template<> ::pb::Null* Arena::CreateMaybeMessage<::pb::Null>(Arena*);
 template<> ::pb::SearchReply* Arena::CreateMaybeMessage<::pb::SearchReply>(Arena*);
 template<> ::pb::SearchReply_User* Arena::CreateMaybeMessage<::pb::SearchReply_User>(Arena*);
 template<> ::pb::SearchRequest* Arena::CreateMaybeMessage<::pb::SearchRequest>(Arena*);
+template<> ::pb::StringsReply* Arena::CreateMaybeMessage<::pb::StringsReply>(Arena*);
 template<> ::pb::UserInfo* Arena::CreateMaybeMessage<::pb::UserInfo>(Arena*);
+template<> ::pb::UserListReq* Arena::CreateMaybeMessage<::pb::UserListReq>(Arena*);
 }  // namespace protobuf
 }  // namespace google
 namespace pb {
 
 // ===================================================================
+
+class Null : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.Null) */ {
+ public:
+  Null();
+  virtual ~Null();
+
+  Null(const Null& from);
+
+  inline Null& operator=(const Null& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Null(Null&& from) noexcept
+    : Null() {
+    *this = ::std::move(from);
+  }
+
+  inline Null& operator=(Null&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Null& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Null* internal_default_instance() {
+    return reinterpret_cast<const Null*>(
+               &_Null_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  void Swap(Null* other);
+  friend void swap(Null& a, Null& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Null* New() const final {
+    return CreateMaybeMessage<Null>(NULL);
+  }
+
+  Null* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Null>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Null& from);
+  void MergeFrom(const Null& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Null* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // @@protoc_insertion_point(class_scope:pb.Null)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_search_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
 
 class Feature : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.Feature) */ {
  public:
@@ -118,7 +226,7 @@ class Feature : public ::google::protobuf::Message /* @@protoc_insertion_point(c
                &_Feature_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    1;
 
   void Swap(Feature* other);
   friend void swap(Feature& a, Feature& b) {
@@ -228,7 +336,7 @@ class UserInfo : public ::google::protobuf::Message /* @@protoc_insertion_point(
                &_UserInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    2;
 
   void Swap(UserInfo* other);
   friend void swap(UserInfo& a, UserInfo& b) {
@@ -368,7 +476,7 @@ class NomalReply : public ::google::protobuf::Message /* @@protoc_insertion_poin
                &_NomalReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    3;
 
   void Swap(NomalReply* other);
   friend void swap(NomalReply& a, NomalReply& b) {
@@ -436,24 +544,24 @@ class NomalReply : public ::google::protobuf::Message /* @@protoc_insertion_poin
 };
 // -------------------------------------------------------------------
 
-class GroupsReply : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.GroupsReply) */ {
+class StringsReply : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.StringsReply) */ {
  public:
-  GroupsReply();
-  virtual ~GroupsReply();
+  StringsReply();
+  virtual ~StringsReply();
 
-  GroupsReply(const GroupsReply& from);
+  StringsReply(const StringsReply& from);
 
-  inline GroupsReply& operator=(const GroupsReply& from) {
+  inline StringsReply& operator=(const StringsReply& from) {
     CopyFrom(from);
     return *this;
   }
   #if LANG_CXX11
-  GroupsReply(GroupsReply&& from) noexcept
-    : GroupsReply() {
+  StringsReply(StringsReply&& from) noexcept
+    : StringsReply() {
     *this = ::std::move(from);
   }
 
-  inline GroupsReply& operator=(GroupsReply&& from) noexcept {
+  inline StringsReply& operator=(StringsReply&& from) noexcept {
     if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
       if (this != &from) InternalSwap(&from);
     } else {
@@ -463,34 +571,34 @@ class GroupsReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
   }
   #endif
   static const ::google::protobuf::Descriptor* descriptor();
-  static const GroupsReply& default_instance();
+  static const StringsReply& default_instance();
 
   static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
-  static inline const GroupsReply* internal_default_instance() {
-    return reinterpret_cast<const GroupsReply*>(
-               &_GroupsReply_default_instance_);
+  static inline const StringsReply* internal_default_instance() {
+    return reinterpret_cast<const StringsReply*>(
+               &_StringsReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    3;
+    4;
 
-  void Swap(GroupsReply* other);
-  friend void swap(GroupsReply& a, GroupsReply& b) {
+  void Swap(StringsReply* other);
+  friend void swap(StringsReply& a, StringsReply& b) {
     a.Swap(&b);
   }
 
   // implements Message ----------------------------------------------
 
-  inline GroupsReply* New() const final {
-    return CreateMaybeMessage<GroupsReply>(NULL);
+  inline StringsReply* New() const final {
+    return CreateMaybeMessage<StringsReply>(NULL);
   }
 
-  GroupsReply* New(::google::protobuf::Arena* arena) const final {
-    return CreateMaybeMessage<GroupsReply>(arena);
+  StringsReply* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<StringsReply>(arena);
   }
   void CopyFrom(const ::google::protobuf::Message& from) final;
   void MergeFrom(const ::google::protobuf::Message& from) final;
-  void CopyFrom(const GroupsReply& from);
-  void MergeFrom(const GroupsReply& from);
+  void CopyFrom(const StringsReply& from);
+  void MergeFrom(const StringsReply& from);
   void Clear() final;
   bool IsInitialized() const final;
 
@@ -507,7 +615,7 @@ class GroupsReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(GroupsReply* other);
+  void InternalSwap(StringsReply* other);
   private:
   inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
     return NULL;
@@ -523,33 +631,277 @@ class GroupsReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
 
   // accessors -------------------------------------------------------
 
-  // repeated string grops = 1;
-  int grops_size() const;
-  void clear_grops();
-  static const int kGropsFieldNumber = 1;
-  const ::std::string& grops(int index) const;
-  ::std::string* mutable_grops(int index);
-  void set_grops(int index, const ::std::string& value);
+  // repeated string values = 1;
+  int values_size() const;
+  void clear_values();
+  static const int kValuesFieldNumber = 1;
+  const ::std::string& values(int index) const;
+  ::std::string* mutable_values(int index);
+  void set_values(int index, const ::std::string& value);
   #if LANG_CXX11
-  void set_grops(int index, ::std::string&& value);
+  void set_values(int index, ::std::string&& value);
   #endif
-  void set_grops(int index, const char* value);
-  void set_grops(int index, const char* value, size_t size);
-  ::std::string* add_grops();
-  void add_grops(const ::std::string& value);
+  void set_values(int index, const char* value);
+  void set_values(int index, const char* value, size_t size);
+  ::std::string* add_values();
+  void add_values(const ::std::string& value);
   #if LANG_CXX11
-  void add_grops(::std::string&& value);
+  void add_values(::std::string&& value);
   #endif
-  void add_grops(const char* value);
-  void add_grops(const char* value, size_t size);
-  const ::google::protobuf::RepeatedPtrField< ::std::string>& grops() const;
-  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_grops();
+  void add_values(const char* value);
+  void add_values(const char* value, size_t size);
+  const ::google::protobuf::RepeatedPtrField< ::std::string>& values() const;
+  ::google::protobuf::RepeatedPtrField< ::std::string>* mutable_values();
 
-  // @@protoc_insertion_point(class_scope:pb.GroupsReply)
+  // @@protoc_insertion_point(class_scope:pb.StringsReply)
  private:
 
   ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
-  ::google::protobuf::RepeatedPtrField< ::std::string> grops_;
+  ::google::protobuf::RepeatedPtrField< ::std::string> values_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_search_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class Group : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.Group) */ {
+ public:
+  Group();
+  virtual ~Group();
+
+  Group(const Group& from);
+
+  inline Group& operator=(const Group& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  Group(Group&& from) noexcept
+    : Group() {
+    *this = ::std::move(from);
+  }
+
+  inline Group& operator=(Group&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const Group& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const Group* internal_default_instance() {
+    return reinterpret_cast<const Group*>(
+               &_Group_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    5;
+
+  void Swap(Group* other);
+  friend void swap(Group& a, Group& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline Group* New() const final {
+    return CreateMaybeMessage<Group>(NULL);
+  }
+
+  Group* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<Group>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const Group& from);
+  void MergeFrom(const Group& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Group* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string group = 1;
+  void clear_group();
+  static const int kGroupFieldNumber = 1;
+  const ::std::string& group() const;
+  void set_group(const ::std::string& value);
+  #if LANG_CXX11
+  void set_group(::std::string&& value);
+  #endif
+  void set_group(const char* value);
+  void set_group(const char* value, size_t size);
+  ::std::string* mutable_group();
+  ::std::string* release_group();
+  void set_allocated_group(::std::string* group);
+
+  // @@protoc_insertion_point(class_scope:pb.Group)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr group_;
+  mutable ::google::protobuf::internal::CachedSize _cached_size_;
+  friend struct ::protobuf_search_2eproto::TableStruct;
+};
+// -------------------------------------------------------------------
+
+class UserListReq : public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:pb.UserListReq) */ {
+ public:
+  UserListReq();
+  virtual ~UserListReq();
+
+  UserListReq(const UserListReq& from);
+
+  inline UserListReq& operator=(const UserListReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  #if LANG_CXX11
+  UserListReq(UserListReq&& from) noexcept
+    : UserListReq() {
+    *this = ::std::move(from);
+  }
+
+  inline UserListReq& operator=(UserListReq&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+  #endif
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const UserListReq& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UserListReq* internal_default_instance() {
+    return reinterpret_cast<const UserListReq*>(
+               &_UserListReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    6;
+
+  void Swap(UserListReq* other);
+  friend void swap(UserListReq& a, UserListReq& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UserListReq* New() const final {
+    return CreateMaybeMessage<UserListReq>(NULL);
+  }
+
+  UserListReq* New(::google::protobuf::Arena* arena) const final {
+    return CreateMaybeMessage<UserListReq>(arena);
+  }
+  void CopyFrom(const ::google::protobuf::Message& from) final;
+  void MergeFrom(const ::google::protobuf::Message& from) final;
+  void CopyFrom(const UserListReq& from);
+  void MergeFrom(const UserListReq& from);
+  void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input) final;
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const final;
+  ::google::protobuf::uint8* InternalSerializeWithCachedSizesToArray(
+      bool deterministic, ::google::protobuf::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UserListReq* other);
+  private:
+  inline ::google::protobuf::Arena* GetArenaNoVirtual() const {
+    return NULL;
+  }
+  inline void* MaybeArenaPtr() const {
+    return NULL;
+  }
+  public:
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string group = 1;
+  void clear_group();
+  static const int kGroupFieldNumber = 1;
+  const ::std::string& group() const;
+  void set_group(const ::std::string& value);
+  #if LANG_CXX11
+  void set_group(::std::string&& value);
+  #endif
+  void set_group(const char* value);
+  void set_group(const char* value, size_t size);
+  ::std::string* mutable_group();
+  ::std::string* release_group();
+  void set_allocated_group(::std::string* group);
+
+  // string skey = 2;
+  void clear_skey();
+  static const int kSkeyFieldNumber = 2;
+  const ::std::string& skey() const;
+  void set_skey(const ::std::string& value);
+  #if LANG_CXX11
+  void set_skey(::std::string&& value);
+  #endif
+  void set_skey(const char* value);
+  void set_skey(const char* value, size_t size);
+  ::std::string* mutable_skey();
+  ::std::string* release_skey();
+  void set_allocated_skey(::std::string* skey);
+
+  // int32 num = 3;
+  void clear_num();
+  static const int kNumFieldNumber = 3;
+  ::google::protobuf::int32 num() const;
+  void set_num(::google::protobuf::int32 value);
+
+  // @@protoc_insertion_point(class_scope:pb.UserListReq)
+ private:
+
+  ::google::protobuf::internal::InternalMetadataWithArena _internal_metadata_;
+  ::google::protobuf::internal::ArenaStringPtr group_;
+  ::google::protobuf::internal::ArenaStringPtr skey_;
+  ::google::protobuf::int32 num_;
   mutable ::google::protobuf::internal::CachedSize _cached_size_;
   friend struct ::protobuf_search_2eproto::TableStruct;
 };
@@ -590,7 +942,7 @@ class SearchRequest : public ::google::protobuf::Message /* @@protoc_insertion_p
                &_SearchRequest_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    4;
+    7;
 
   void Swap(SearchRequest* other);
   friend void swap(SearchRequest& a, SearchRequest& b) {
@@ -715,7 +1067,7 @@ class SearchReply_User : public ::google::protobuf::Message /* @@protoc_insertio
                &_SearchReply_User_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    5;
+    8;
 
   void Swap(SearchReply_User* other);
   friend void swap(SearchReply_User& a, SearchReply_User& b) {
@@ -833,7 +1185,7 @@ class SearchReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
                &_SearchReply_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    6;
+    9;
 
   void Swap(SearchReply* other);
   friend void swap(SearchReply& a, SearchReply& b) {
@@ -916,6 +1268,10 @@ class SearchReply : public ::google::protobuf::Message /* @@protoc_insertion_poi
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// Null
+
+// -------------------------------------------------------------------
+
 // Feature
 
 // repeated float feature = 1;
@@ -1108,75 +1464,256 @@ inline void NomalReply::set_ret(bool value) {
 
 // -------------------------------------------------------------------
 
-// GroupsReply
+// StringsReply
 
-// repeated string grops = 1;
-inline int GroupsReply::grops_size() const {
-  return grops_.size();
+// repeated string values = 1;
+inline int StringsReply::values_size() const {
+  return values_.size();
 }
-inline void GroupsReply::clear_grops() {
-  grops_.Clear();
+inline void StringsReply::clear_values() {
+  values_.Clear();
 }
-inline const ::std::string& GroupsReply::grops(int index) const {
-  // @@protoc_insertion_point(field_get:pb.GroupsReply.grops)
-  return grops_.Get(index);
+inline const ::std::string& StringsReply::values(int index) const {
+  // @@protoc_insertion_point(field_get:pb.StringsReply.values)
+  return values_.Get(index);
 }
-inline ::std::string* GroupsReply::mutable_grops(int index) {
-  // @@protoc_insertion_point(field_mutable:pb.GroupsReply.grops)
-  return grops_.Mutable(index);
+inline ::std::string* StringsReply::mutable_values(int index) {
+  // @@protoc_insertion_point(field_mutable:pb.StringsReply.values)
+  return values_.Mutable(index);
 }
-inline void GroupsReply::set_grops(int index, const ::std::string& value) {
-  // @@protoc_insertion_point(field_set:pb.GroupsReply.grops)
-  grops_.Mutable(index)->assign(value);
+inline void StringsReply::set_values(int index, const ::std::string& value) {
+  // @@protoc_insertion_point(field_set:pb.StringsReply.values)
+  values_.Mutable(index)->assign(value);
 }
 #if LANG_CXX11
-inline void GroupsReply::set_grops(int index, ::std::string&& value) {
-  // @@protoc_insertion_point(field_set:pb.GroupsReply.grops)
-  grops_.Mutable(index)->assign(std::move(value));
+inline void StringsReply::set_values(int index, ::std::string&& value) {
+  // @@protoc_insertion_point(field_set:pb.StringsReply.values)
+  values_.Mutable(index)->assign(std::move(value));
 }
 #endif
-inline void GroupsReply::set_grops(int index, const char* value) {
+inline void StringsReply::set_values(int index, const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  grops_.Mutable(index)->assign(value);
-  // @@protoc_insertion_point(field_set_char:pb.GroupsReply.grops)
+  values_.Mutable(index)->assign(value);
+  // @@protoc_insertion_point(field_set_char:pb.StringsReply.values)
 }
-inline void GroupsReply::set_grops(int index, const char* value, size_t size) {
-  grops_.Mutable(index)->assign(
+inline void StringsReply::set_values(int index, const char* value, size_t size) {
+  values_.Mutable(index)->assign(
     reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_set_pointer:pb.GroupsReply.grops)
+  // @@protoc_insertion_point(field_set_pointer:pb.StringsReply.values)
 }
-inline ::std::string* GroupsReply::add_grops() {
-  // @@protoc_insertion_point(field_add_mutable:pb.GroupsReply.grops)
-  return grops_.Add();
+inline ::std::string* StringsReply::add_values() {
+  // @@protoc_insertion_point(field_add_mutable:pb.StringsReply.values)
+  return values_.Add();
 }
-inline void GroupsReply::add_grops(const ::std::string& value) {
-  grops_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add:pb.GroupsReply.grops)
+inline void StringsReply::add_values(const ::std::string& value) {
+  values_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add:pb.StringsReply.values)
 }
 #if LANG_CXX11
-inline void GroupsReply::add_grops(::std::string&& value) {
-  grops_.Add(std::move(value));
-  // @@protoc_insertion_point(field_add:pb.GroupsReply.grops)
+inline void StringsReply::add_values(::std::string&& value) {
+  values_.Add(std::move(value));
+  // @@protoc_insertion_point(field_add:pb.StringsReply.values)
 }
 #endif
-inline void GroupsReply::add_grops(const char* value) {
+inline void StringsReply::add_values(const char* value) {
   GOOGLE_DCHECK(value != NULL);
-  grops_.Add()->assign(value);
-  // @@protoc_insertion_point(field_add_char:pb.GroupsReply.grops)
+  values_.Add()->assign(value);
+  // @@protoc_insertion_point(field_add_char:pb.StringsReply.values)
 }
-inline void GroupsReply::add_grops(const char* value, size_t size) {
-  grops_.Add()->assign(reinterpret_cast<const char*>(value), size);
-  // @@protoc_insertion_point(field_add_pointer:pb.GroupsReply.grops)
+inline void StringsReply::add_values(const char* value, size_t size) {
+  values_.Add()->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_add_pointer:pb.StringsReply.values)
 }
 inline const ::google::protobuf::RepeatedPtrField< ::std::string>&
-GroupsReply::grops() const {
-  // @@protoc_insertion_point(field_list:pb.GroupsReply.grops)
-  return grops_;
+StringsReply::values() const {
+  // @@protoc_insertion_point(field_list:pb.StringsReply.values)
+  return values_;
 }
 inline ::google::protobuf::RepeatedPtrField< ::std::string>*
-GroupsReply::mutable_grops() {
-  // @@protoc_insertion_point(field_mutable_list:pb.GroupsReply.grops)
-  return &grops_;
+StringsReply::mutable_values() {
+  // @@protoc_insertion_point(field_mutable_list:pb.StringsReply.values)
+  return &values_;
+}
+
+// -------------------------------------------------------------------
+
+// Group
+
+// string group = 1;
+inline void Group::clear_group() {
+  group_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& Group::group() const {
+  // @@protoc_insertion_point(field_get:pb.Group.group)
+  return group_.GetNoArena();
+}
+inline void Group::set_group(const ::std::string& value) {
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:pb.Group.group)
+}
+#if LANG_CXX11
+inline void Group::set_group(::std::string&& value) {
+  
+  group_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:pb.Group.group)
+}
+#endif
+inline void Group::set_group(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:pb.Group.group)
+}
+inline void Group::set_group(const char* value, size_t size) {
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:pb.Group.group)
+}
+inline ::std::string* Group::mutable_group() {
+  
+  // @@protoc_insertion_point(field_mutable:pb.Group.group)
+  return group_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* Group::release_group() {
+  // @@protoc_insertion_point(field_release:pb.Group.group)
+  
+  return group_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void Group::set_allocated_group(::std::string* group) {
+  if (group != NULL) {
+    
+  } else {
+    
+  }
+  group_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), group);
+  // @@protoc_insertion_point(field_set_allocated:pb.Group.group)
+}
+
+// -------------------------------------------------------------------
+
+// UserListReq
+
+// string group = 1;
+inline void UserListReq::clear_group() {
+  group_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& UserListReq::group() const {
+  // @@protoc_insertion_point(field_get:pb.UserListReq.group)
+  return group_.GetNoArena();
+}
+inline void UserListReq::set_group(const ::std::string& value) {
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:pb.UserListReq.group)
+}
+#if LANG_CXX11
+inline void UserListReq::set_group(::std::string&& value) {
+  
+  group_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:pb.UserListReq.group)
+}
+#endif
+inline void UserListReq::set_group(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:pb.UserListReq.group)
+}
+inline void UserListReq::set_group(const char* value, size_t size) {
+  
+  group_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:pb.UserListReq.group)
+}
+inline ::std::string* UserListReq::mutable_group() {
+  
+  // @@protoc_insertion_point(field_mutable:pb.UserListReq.group)
+  return group_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UserListReq::release_group() {
+  // @@protoc_insertion_point(field_release:pb.UserListReq.group)
+  
+  return group_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UserListReq::set_allocated_group(::std::string* group) {
+  if (group != NULL) {
+    
+  } else {
+    
+  }
+  group_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), group);
+  // @@protoc_insertion_point(field_set_allocated:pb.UserListReq.group)
+}
+
+// string skey = 2;
+inline void UserListReq::clear_skey() {
+  skey_.ClearToEmptyNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline const ::std::string& UserListReq::skey() const {
+  // @@protoc_insertion_point(field_get:pb.UserListReq.skey)
+  return skey_.GetNoArena();
+}
+inline void UserListReq::set_skey(const ::std::string& value) {
+  
+  skey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:pb.UserListReq.skey)
+}
+#if LANG_CXX11
+inline void UserListReq::set_skey(::std::string&& value) {
+  
+  skey_.SetNoArena(
+    &::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:pb.UserListReq.skey)
+}
+#endif
+inline void UserListReq::set_skey(const char* value) {
+  GOOGLE_DCHECK(value != NULL);
+  
+  skey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:pb.UserListReq.skey)
+}
+inline void UserListReq::set_skey(const char* value, size_t size) {
+  
+  skey_.SetNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:pb.UserListReq.skey)
+}
+inline ::std::string* UserListReq::mutable_skey() {
+  
+  // @@protoc_insertion_point(field_mutable:pb.UserListReq.skey)
+  return skey_.MutableNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline ::std::string* UserListReq::release_skey() {
+  // @@protoc_insertion_point(field_release:pb.UserListReq.skey)
+  
+  return skey_.ReleaseNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+}
+inline void UserListReq::set_allocated_skey(::std::string* skey) {
+  if (skey != NULL) {
+    
+  } else {
+    
+  }
+  skey_.SetAllocatedNoArena(&::google::protobuf::internal::GetEmptyStringAlreadyInited(), skey);
+  // @@protoc_insertion_point(field_set_allocated:pb.UserListReq.skey)
+}
+
+// int32 num = 3;
+inline void UserListReq::clear_num() {
+  num_ = 0;
+}
+inline ::google::protobuf::int32 UserListReq::num() const {
+  // @@protoc_insertion_point(field_get:pb.UserListReq.num)
+  return num_;
+}
+inline void UserListReq::set_num(::google::protobuf::int32 value) {
+  
+  num_ = value;
+  // @@protoc_insertion_point(field_set:pb.UserListReq.num)
 }
 
 // -------------------------------------------------------------------
@@ -1374,6 +1911,12 @@ SearchReply::users() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

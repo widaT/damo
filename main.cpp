@@ -3,8 +3,6 @@
 #include "pb/search.grpc.pb.h"
 #include <grpcpp/grpcpp.h>
 #include "db/ini.h"
-#include <unistd.h>
-#include "db/log.h"
 #include "db/facedb.h"
 #include "db/common.h"
 
@@ -45,7 +43,7 @@ class SearchServiceImpl final : public ::Facedb::Service {
             feature[i] = req->feature(i);
         }
         int ret = facedb->addUser(req->group(), req->id(), feature);
-        reply->set_ret(0 == ret ? true : false);
+        reply->set_ret(0 == ret);
         return Status::OK;
     }
 
@@ -64,23 +62,43 @@ class SearchServiceImpl final : public ::Facedb::Service {
 
     Status DelUser(ServerContext *context, const UserInfo *req, NomalReply *reply) override {
         int ret = facedb->delUser(req->group(), req->id());
-        reply->set_ret(ret == 0 ? true : false);
+        reply->set_ret(ret == 0);
         return Status::OK;
     }
 
-    Status GroupList(ServerContext *context, const SearchRequest *req, GroupsReply *reply) override {
+    Status GroupList(ServerContext *context, const Null *req, StringsReply *reply) override {
+        vector<string> groups;
+        int ret = facedb->groupList(groups);
+        if (ret == -1) {
+            reply->add_values();
+        }else {
+            for(auto i:groups) {
+                reply->add_values(i);
+            }
+        }
+        return Status::OK;
+    }
+
+
+    Status UserList(ServerContext *context, const UserListReq *req, StringsReply *reply) override {
+        vector<string> users;
+        int ret = facedb->userList(req->group(),req->skey(),req->num(),users);
+        if (ret == -1) {
+            reply->add_values();
+        }else {
+            for(auto i:users) {
+                reply->add_values(i);
+            }
+        }
+        return Status::OK;
+    }
+
+    Status DelGroup(ServerContext *context, const Group *req, NomalReply *reply) override {
+        reply->set_ret(facedb->delgroup(req->group()) == 0);
         return Status::OK;
     }
 };
 
-string cwd() {
-    char pwd[255];
-    if (!getcwd(pwd, 255)) {
-        perror("getcwd");
-        return "";
-    }
-    return string(pwd);
-}
 
 
 int RunServer() {
@@ -97,8 +115,7 @@ int RunServer() {
 }
 
 int main() {
-    app_log_init(INI::getInstance()->read("base","logpath").c_str(), _APP_TRACE, "log.", 0);
-    //APP_WARN_LOG("fsdfdsf %s","aaa");
+   // APP_WARN_LOG("fsdfdsf %s","aaa");
     RunServer();
     return 0;
 }

@@ -13,6 +13,7 @@
 float distance(float *, float *);
 void pack(float *, std::string &);
 void unpack(float *, std::string &);
+std::string cwd();
 inline float avx_euclidean_distance(float *x, float *y) { //inline 函数体需要一起
     static const size_t single_size = 8;
     const size_t end = FEATURE_SIZE / single_size;

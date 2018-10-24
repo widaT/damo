@@ -3,6 +3,7 @@
 //
 
 #include "common.h"
+#include <unistd.h>
 
 using namespace std;
 
@@ -24,4 +25,14 @@ void pack(float *ffeature, string &sfeature) {
 void unpack(float *ffeature, string &sfeature) {
     istringstream r = istringstream(sfeature);
     r.read((char *) ffeature, FEATURE_SIZE * sizeof(float));
+}
+
+
+string cwd() {
+    char pwd[255];
+    if (!getcwd(pwd, 255)) {
+        perror("getcwd");
+        return "";
+    }
+    return string(pwd);
 }

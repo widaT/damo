@@ -7,6 +7,7 @@
 using namespace std;
 using namespace config;
 namespace db {
+
     Facedb *Facedb::instance = new Facedb();
 
     DB *db = new DB(INI::getInstance()->read("db","path"));
@@ -33,10 +34,20 @@ namespace db {
         return db->Delete(group, id);
     }
 
+    int Facedb::delgroup(std::string group) {
+        return db->DelGroup(group);
+    }
+
+    int Facedb::groupList(std::vector<string> & groups) {
+        return db->GroupList(groups);
+    }
+
+    int Facedb::userList(std::string group, std::string startKey, int num, std::vector<std::string> & users) {
+        return db->UserList(group,startKey,num,users);
+    }
+
     Facedb::~Facedb() {
         delete Facedb::instance;
         delete db;
     }
-
-
 }
