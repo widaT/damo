@@ -46,6 +46,10 @@ namespace db {
         return db->UserList(group,startKey,num,users);
     }
 
+    uint64_t Facedb::GroupSize(string group) {
+        return db->GroupSize(group);
+    }
+
     Facedb::~Facedb() {
         delete Facedb::instance;
         delete db;

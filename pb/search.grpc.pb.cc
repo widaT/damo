@@ -25,6 +25,7 @@ static const char* Facedb_method_names[] = {
   "/pb.Facedb/DelUser",
   "/pb.Facedb/UserList",
   "/pb.Facedb/DelGroup",
+  "/pb.Facedb/GroupSize",
 };
 
 std::unique_ptr< Facedb::Stub> Facedb::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -41,6 +42,7 @@ Facedb::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
   , rpcmethod_DelUser_(Facedb_method_names[4], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_UserList_(Facedb_method_names[5], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   , rpcmethod_DelGroup_(Facedb_method_names[6], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  , rpcmethod_GroupSize_(Facedb_method_names[7], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
 ::grpc::Status Facedb::Stub::Search(::grpc::ClientContext* context, const ::pb::SearchRequest& request, ::pb::SearchReply* response) {
@@ -155,6 +157,22 @@ void Facedb::Stub::experimental_async::DelGroup(::grpc::ClientContext* context, 
   return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::NomalReply>::Create(channel_.get(), cq, rpcmethod_DelGroup_, context, request, false);
 }
 
+::grpc::Status Facedb::Stub::GroupSize(::grpc::ClientContext* context, const ::pb::Group& request, ::pb::SizeReply* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_GroupSize_, context, request, response);
+}
+
+void Facedb::Stub::experimental_async::GroupSize(::grpc::ClientContext* context, const ::pb::Group* request, ::pb::SizeReply* response, std::function<void(::grpc::Status)> f) {
+  return ::grpc::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_GroupSize_, context, request, response, std::move(f));
+}
+
+::grpc::ClientAsyncResponseReader< ::pb::SizeReply>* Facedb::Stub::AsyncGroupSizeRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::SizeReply>::Create(channel_.get(), cq, rpcmethod_GroupSize_, context, request, true);
+}
+
+::grpc::ClientAsyncResponseReader< ::pb::SizeReply>* Facedb::Stub::PrepareAsyncGroupSizeRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc::internal::ClientAsyncResponseReaderFactory< ::pb::SizeReply>::Create(channel_.get(), cq, rpcmethod_GroupSize_, context, request, false);
+}
+
 Facedb::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       Facedb_method_names[0],
@@ -191,6 +209,11 @@ Facedb::Service::Service() {
       ::grpc::internal::RpcMethod::NORMAL_RPC,
       new ::grpc::internal::RpcMethodHandler< Facedb::Service, ::pb::Group, ::pb::NomalReply>(
           std::mem_fn(&Facedb::Service::DelGroup), this)));
+  AddMethod(new ::grpc::internal::RpcServiceMethod(
+      Facedb_method_names[7],
+      ::grpc::internal::RpcMethod::NORMAL_RPC,
+      new ::grpc::internal::RpcMethodHandler< Facedb::Service, ::pb::Group, ::pb::SizeReply>(
+          std::mem_fn(&Facedb::Service::GroupSize), this)));
 }
 
 Facedb::Service::~Service() {
@@ -239,6 +262,13 @@ Facedb::Service::~Service() {
 }
 
 ::grpc::Status Facedb::Service::DelGroup(::grpc::ServerContext* context, const ::pb::Group* request, ::pb::NomalReply* response) {
+  (void) context;
+  (void) request;
+  (void) response;
+  return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+}
+
+::grpc::Status Facedb::Service::GroupSize(::grpc::ServerContext* context, const ::pb::Group* request, ::pb::SizeReply* response) {
   (void) context;
   (void) request;
   (void) response;

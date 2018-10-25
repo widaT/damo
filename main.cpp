@@ -86,6 +86,11 @@ class SearchServiceImpl final : public ::Facedb::Service {
         reply->set_ret(facedb->Delgroup(req->group()) == 0);
         return Status::OK;
     }
+
+    Status GroupSize(ServerContext *context, const Group *req, SizeReply *reply) override {
+        reply->set_size(facedb->GroupSize(req->group()));
+        return Status::OK;
+    }
 };
 
 

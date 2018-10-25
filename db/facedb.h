@@ -38,6 +38,8 @@ namespace db {
 
         int Delgroup(std::string);
 
+        uint64_t GroupSize(std::string);
+
         ~Facedb();
     };
 

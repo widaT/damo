@@ -13,8 +13,12 @@ service Facedb {
     rpc DelUser(UserInfo) returns (NomalReply) {}
     rpc UserList(UserListReq) returns (StringsReply) {}
     rpc DelGroup(Group) returns (NomalReply) {}
+    rpc GroupSize(Group) returns (SizeReply) {}
 }
 
+message SizeReply{
+    uint64 size =1;
+}
 
 message Null {}
 
