@@ -10,7 +10,7 @@ namespace db {
 
     Facedb *Facedb::instance = new Facedb();
 
-    DB *db = new DB(INI::getInstance()->read("db","path"));
+    DB *db = new DB(INI::GetInstance()->Read("db","path"));
 
     Facedb *Facedb::GetInstance() {
         return Facedb::instance;

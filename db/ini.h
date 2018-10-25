@@ -91,11 +91,11 @@ public:
 	INI();
     ~INI();
 
-    static INI *getInstance();
+    static INI *GetInstance();
 
-    bool open(const char* path);
+    bool Open(const char* path);
 
-    string read(const char*psect, const char*pkey);
+    string Read(const char*psect, const char*pkey);
 	
 protected:
     bool do_open(const char* pinipath);

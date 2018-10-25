@@ -95,8 +95,8 @@ class SearchServiceImpl final : public ::Facedb::Service {
 
 
 int RunServer() {
-    INI *conf = INI::getInstance();
-    string port = conf->read("base", "port");
+    INI *conf = INI::GetInstance();
+    string port = conf->Read("base", "port");
     std::string server_address("0.0.0.0:" + port);
     SearchServiceImpl service;
     ServerBuilder builder;

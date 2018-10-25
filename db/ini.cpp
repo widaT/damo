@@ -5,7 +5,7 @@ namespace config {
 
 	INI::INI(){
 #ifdef COMMON_CONFIG
-		open(COMMON_CONFIG);
+		Open(COMMON_CONFIG);
 #endif
 	}
 
@@ -13,19 +13,19 @@ namespace config {
 		delete INI::instance;
 	}
 
-	INI* INI::getInstance(){
+	INI* INI::GetInstance(){
 		if(nullptr == INI::instance){
             INI::instance=new INI();
 		}
 		return INI::instance;
 	}
 
-	bool INI::open(const char* path)
+	bool INI::Open(const char* path)
 	{
 		return do_open(path);
 	}
 
-	string INI::read(const char*psect, const char*pkey)
+	string INI::Read(const char*psect, const char*pkey)
 	{
 		string mapkey = psect;
 		mapkey += MIDDLESTRING;
