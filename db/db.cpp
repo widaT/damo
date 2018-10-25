@@ -131,8 +131,6 @@ namespace db {
         float ifeautre[FEATURE_SIZE];
         string skey = group + SPLIT_STR + startkey;
         string ekey = group + SPLIT_STR + endkey;
-
-        cout << skey << ekey << endl;
         for (iter->Seek(skey); iter->Valid() && iter->key().compare(ekey) < 0; iter->Next()) {
             auto sfeature = iter->value().ToString();
             unpack(ifeautre, sfeature);
