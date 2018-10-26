@@ -103,11 +103,16 @@ namespace db {
 
     int DB::QSearch(const string &group, float *feature, vector<pb::SearchReply_User> &users) {
         static const vector<tuple<string, string>> keys = {
-                make_tuple("0", "a"),//左开右闭
+/*                make_tuple("0", "a"),//左开右闭
                 make_tuple("a", "h"),
                 make_tuple("h", "0"),
                 make_tuple("o", "u"),
-                make_tuple("u", "{")};
+                make_tuple("u", "{")};*/
+        make_tuple("0", "3"),//左开右闭
+                make_tuple("3", "6"),
+                make_tuple("6", "a"),
+                make_tuple("a", "e"),
+                make_tuple("e", "{")};
 
         vector<SearchReply_User> user_arr[5];
         vector<thread> threads;

@@ -6,92 +6,73 @@
 #include <algorithm>
 
 #include <google/protobuf/stubs/common.h>
-#include <google/protobuf/stubs/port.h>
 #include <google/protobuf/io/coded_stream.h>
+#include <google/protobuf/extension_set.h>
 #include <google/protobuf/wire_format_lite_inl.h>
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/generated_message_reflection.h>
 #include <google/protobuf/reflection_ops.h>
 #include <google/protobuf/wire_format.h>
-// This is a temporary google only hack
-#ifdef GOOGLE_PROTOBUF_ENFORCE_UNIQUENESS
-#include "third_party/protobuf/version.h"
-#endif
 // @@protoc_insertion_point(includes)
+#include <google/protobuf/port_def.inc>
 
-namespace protobuf_search_2eproto {
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_search_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_InfoReply_GroupInfo;
-extern PROTOBUF_INTERNAL_EXPORT_protobuf_search_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SearchReply_User;
-}  // namespace protobuf_search_2eproto
+extern PROTOBUF_INTERNAL_EXPORT_search_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_InfoReply_GroupInfo_search_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_search_2eproto ::google::protobuf::internal::SCCInfo<0> scc_info_SearchReply_User_search_2eproto;
 namespace pb {
 class SizeReplyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SizeReply>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<SizeReply> _instance;
 } _SizeReply_default_instance_;
 class NullDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Null>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<Null> _instance;
 } _Null_default_instance_;
 class FeatureDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Feature>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<Feature> _instance;
 } _Feature_default_instance_;
 class UserInfoDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<UserInfo>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<UserInfo> _instance;
 } _UserInfo_default_instance_;
 class NomalReplyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<NomalReply>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<NomalReply> _instance;
 } _NomalReply_default_instance_;
 class StringsReplyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<StringsReply>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<StringsReply> _instance;
 } _StringsReply_default_instance_;
 class GroupDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<Group>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<Group> _instance;
 } _Group_default_instance_;
 class UserListReqDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<UserListReq>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<UserListReq> _instance;
 } _UserListReq_default_instance_;
 class SearchRequestDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SearchRequest>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<SearchRequest> _instance;
 } _SearchRequest_default_instance_;
 class SearchReply_UserDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SearchReply_User>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<SearchReply_User> _instance;
 } _SearchReply_User_default_instance_;
 class SearchReplyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<SearchReply>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<SearchReply> _instance;
 } _SearchReply_default_instance_;
 class InfoReply_GroupInfoDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<InfoReply_GroupInfo>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<InfoReply_GroupInfo> _instance;
 } _InfoReply_GroupInfo_default_instance_;
 class InfoReplyDefaultTypeInternal {
  public:
-  ::google::protobuf::internal::ExplicitlyConstructed<InfoReply>
-      _instance;
+  ::google::protobuf::internal::ExplicitlyConstructed<InfoReply> _instance;
 } _InfoReply_default_instance_;
 }  // namespace pb
-namespace protobuf_search_2eproto {
-static void InitDefaultsSizeReply() {
+static void InitDefaultsSizeReply_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -102,10 +83,10 @@ static void InitDefaultsSizeReply() {
   ::pb::SizeReply::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_SizeReply =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSizeReply}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_SizeReply_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSizeReply_search_2eproto}, {}};
 
-static void InitDefaultsNull() {
+static void InitDefaultsNull_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -116,10 +97,10 @@ static void InitDefaultsNull() {
   ::pb::Null::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Null =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNull}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Null_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNull_search_2eproto}, {}};
 
-static void InitDefaultsFeature() {
+static void InitDefaultsFeature_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -130,10 +111,10 @@ static void InitDefaultsFeature() {
   ::pb::Feature::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Feature =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFeature}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Feature_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsFeature_search_2eproto}, {}};
 
-static void InitDefaultsUserInfo() {
+static void InitDefaultsUserInfo_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -144,10 +125,10 @@ static void InitDefaultsUserInfo() {
   ::pb::UserInfo::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_UserInfo =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsUserInfo}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_UserInfo_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsUserInfo_search_2eproto}, {}};
 
-static void InitDefaultsNomalReply() {
+static void InitDefaultsNomalReply_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -158,10 +139,10 @@ static void InitDefaultsNomalReply() {
   ::pb::NomalReply::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_NomalReply =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNomalReply}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_NomalReply_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsNomalReply_search_2eproto}, {}};
 
-static void InitDefaultsStringsReply() {
+static void InitDefaultsStringsReply_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -172,10 +153,10 @@ static void InitDefaultsStringsReply() {
   ::pb::StringsReply::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_StringsReply =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsStringsReply}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_StringsReply_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsStringsReply_search_2eproto}, {}};
 
-static void InitDefaultsGroup() {
+static void InitDefaultsGroup_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -186,10 +167,10 @@ static void InitDefaultsGroup() {
   ::pb::Group::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_Group =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGroup}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_Group_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsGroup_search_2eproto}, {}};
 
-static void InitDefaultsUserListReq() {
+static void InitDefaultsUserListReq_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -200,10 +181,10 @@ static void InitDefaultsUserListReq() {
   ::pb::UserListReq::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_UserListReq =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsUserListReq}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_UserListReq_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsUserListReq_search_2eproto}, {}};
 
-static void InitDefaultsSearchRequest() {
+static void InitDefaultsSearchRequest_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -214,10 +195,10 @@ static void InitDefaultsSearchRequest() {
   ::pb::SearchRequest::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_SearchRequest =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSearchRequest}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_SearchRequest_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSearchRequest_search_2eproto}, {}};
 
-static void InitDefaultsSearchReply_User() {
+static void InitDefaultsSearchReply_User_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -228,10 +209,10 @@ static void InitDefaultsSearchReply_User() {
   ::pb::SearchReply_User::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_SearchReply_User =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSearchReply_User}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_SearchReply_User_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsSearchReply_User_search_2eproto}, {}};
 
-static void InitDefaultsSearchReply() {
+static void InitDefaultsSearchReply_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -242,11 +223,11 @@ static void InitDefaultsSearchReply() {
   ::pb::SearchReply::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_SearchReply =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSearchReply}, {
-      &protobuf_search_2eproto::scc_info_SearchReply_User.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_SearchReply_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsSearchReply_search_2eproto}, {
+      &scc_info_SearchReply_User_search_2eproto.base,}};
 
-static void InitDefaultsInfoReply_GroupInfo() {
+static void InitDefaultsInfoReply_GroupInfo_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -257,10 +238,10 @@ static void InitDefaultsInfoReply_GroupInfo() {
   ::pb::InfoReply_GroupInfo::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<0> scc_info_InfoReply_GroupInfo =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsInfoReply_GroupInfo}, {}};
+::google::protobuf::internal::SCCInfo<0> scc_info_InfoReply_GroupInfo_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsInfoReply_GroupInfo_search_2eproto}, {}};
 
-static void InitDefaultsInfoReply() {
+static void InitDefaultsInfoReply_search_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   {
@@ -271,116 +252,118 @@ static void InitDefaultsInfoReply() {
   ::pb::InfoReply::InitAsDefaultInstance();
 }
 
-::google::protobuf::internal::SCCInfo<1> scc_info_InfoReply =
-    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsInfoReply}, {
-      &protobuf_search_2eproto::scc_info_InfoReply_GroupInfo.base,}};
+::google::protobuf::internal::SCCInfo<1> scc_info_InfoReply_search_2eproto =
+    {{ATOMIC_VAR_INIT(::google::protobuf::internal::SCCInfoBase::kUninitialized), 1, InitDefaultsInfoReply_search_2eproto}, {
+      &scc_info_InfoReply_GroupInfo_search_2eproto.base,}};
 
-void InitDefaults() {
-  ::google::protobuf::internal::InitSCC(&scc_info_SizeReply.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Null.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Feature.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_UserInfo.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_NomalReply.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_StringsReply.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_Group.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_UserListReq.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SearchRequest.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SearchReply_User.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_SearchReply.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_InfoReply_GroupInfo.base);
-  ::google::protobuf::internal::InitSCC(&scc_info_InfoReply.base);
+void InitDefaults_search_2eproto() {
+  ::google::protobuf::internal::InitSCC(&scc_info_SizeReply_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Null_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Feature_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_UserInfo_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_NomalReply_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_StringsReply_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_Group_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_UserListReq_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SearchRequest_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SearchReply_User_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_SearchReply_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_InfoReply_GroupInfo_search_2eproto.base);
+  ::google::protobuf::internal::InitSCC(&scc_info_InfoReply_search_2eproto.base);
 }
 
-::google::protobuf::Metadata file_level_metadata[13];
+::google::protobuf::Metadata file_level_metadata_search_2eproto[13];
+constexpr ::google::protobuf::EnumDescriptor const** file_level_enum_descriptors_search_2eproto = nullptr;
+constexpr ::google::protobuf::ServiceDescriptor const** file_level_service_descriptors_search_2eproto = nullptr;
 
-const ::google::protobuf::uint32 TableStruct::offsets[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+const ::google::protobuf::uint32 TableStruct_search_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SizeReply, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::SizeReply, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SizeReply, size_),
+  PROTOBUF_FIELD_OFFSET(::pb::SizeReply, size_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Null, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::Null, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Feature, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::Feature, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Feature, feature_),
+  PROTOBUF_FIELD_OFFSET(::pb::Feature, feature_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserInfo, group_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserInfo, id_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserInfo, feature_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserInfo, group_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserInfo, id_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserInfo, feature_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::NomalReply, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::NomalReply, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::NomalReply, ret_),
+  PROTOBUF_FIELD_OFFSET(::pb::NomalReply, ret_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::StringsReply, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::StringsReply, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::StringsReply, values_),
+  PROTOBUF_FIELD_OFFSET(::pb::StringsReply, values_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Group, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::Group, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::Group, group_),
+  PROTOBUF_FIELD_OFFSET(::pb::Group, group_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserListReq, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserListReq, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserListReq, group_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserListReq, skey_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::UserListReq, num_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserListReq, group_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserListReq, skey_),
+  PROTOBUF_FIELD_OFFSET(::pb::UserListReq, num_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchRequest, group_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchRequest, feature_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchRequest, group_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchRequest, feature_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchReply_User, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchReply_User, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchReply_User, name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchReply_User, distance_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchReply_User, name_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchReply_User, distance_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchReply, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchReply, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::SearchReply, users_),
+  PROTOBUF_FIELD_OFFSET(::pb::SearchReply, users_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::InfoReply_GroupInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::InfoReply_GroupInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::InfoReply_GroupInfo, name_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::InfoReply_GroupInfo, len_),
+  PROTOBUF_FIELD_OFFSET(::pb::InfoReply_GroupInfo, name_),
+  PROTOBUF_FIELD_OFFSET(::pb::InfoReply_GroupInfo, len_),
   ~0u,  // no _has_bits_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::InfoReply, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::pb::InfoReply, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::InfoReply, groupslen_),
-  GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(::pb::InfoReply, groups_),
+  PROTOBUF_FIELD_OFFSET(::pb::InfoReply, groupslen_),
+  PROTOBUF_FIELD_OFFSET(::pb::InfoReply, groups_),
 };
-static const ::google::protobuf::internal::MigrationSchema schemas[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
+static const ::google::protobuf::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::pb::SizeReply)},
   { 6, -1, sizeof(::pb::Null)},
   { 11, -1, sizeof(::pb::Feature)},
@@ -412,83 +395,67 @@ static ::google::protobuf::Message const * const file_default_instances[] = {
   reinterpret_cast<const ::google::protobuf::Message*>(&::pb::_InfoReply_default_instance_),
 };
 
-void protobuf_AssignDescriptors() {
-  AddDescriptors();
-  AssignDescriptors(
-      "search.proto", schemas, file_default_instances, TableStruct::offsets,
-      file_level_metadata, NULL, NULL);
-}
+::google::protobuf::internal::AssignDescriptorsTable assign_descriptors_table_search_2eproto = {
+  {}, AddDescriptors_search_2eproto, "search.proto", schemas,
+  file_default_instances, TableStruct_search_2eproto::offsets,
+  file_level_metadata_search_2eproto, 13, file_level_enum_descriptors_search_2eproto, file_level_service_descriptors_search_2eproto,
+};
 
-void protobuf_AssignDescriptorsOnce() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, protobuf_AssignDescriptors);
-}
+::google::protobuf::internal::DescriptorTable descriptor_table_search_2eproto = {
+  false, InitDefaults_search_2eproto, 
+  "\n\014search.proto\022\002pb\"\031\n\tSizeReply\022\014\n\004size\030"
+  "\001 \001(\004\"\006\n\004Null\"\032\n\007Feature\022\017\n\007feature\030\001 \003("
+  "\002\"6\n\010UserInfo\022\r\n\005group\030\001 \001(\t\022\n\n\002id\030\002 \001(\t"
+  "\022\017\n\007feature\030\003 \003(\002\"\031\n\nNomalReply\022\013\n\003ret\030\001"
+  " \001(\010\"\036\n\014StringsReply\022\016\n\006values\030\001 \003(\t\"\026\n\005"
+  "Group\022\r\n\005group\030\001 \001(\t\"7\n\013UserListReq\022\r\n\005g"
+  "roup\030\001 \001(\t\022\014\n\004skey\030\002 \001(\t\022\013\n\003num\030\003 \001(\005\"/\n"
+  "\rSearchRequest\022\r\n\005group\030\001 \001(\t\022\017\n\007feature"
+  "\030\002 \003(\002\"Z\n\013SearchReply\022#\n\005users\030\001 \003(\0132\024.p"
+  "b.SearchReply.User\032&\n\004User\022\014\n\004name\030\001 \001(\t"
+  "\022\020\n\010distance\030\002 \001(\002\"o\n\tInfoReply\022\021\n\tGroup"
+  "sLen\030\001 \001(\005\022\'\n\006groups\030\002 \003(\0132\027.pb.InfoRepl"
+  "y.GroupInfo\032&\n\tGroupInfo\022\014\n\004name\030\001 \001(\t\022\013"
+  "\n\003len\030\002 \001(\0052\210\003\n\006Facedb\022.\n\006Search\022\021.pb.Se"
+  "archRequest\032\017.pb.SearchReply\"\000\022)\n\tGroupL"
+  "ist\022\010.pb.Null\032\020.pb.StringsReply\"\000\022)\n\007Add"
+  "User\022\014.pb.UserInfo\032\016.pb.NomalReply\"\000\022\'\n\007"
+  "GetUser\022\014.pb.UserInfo\032\014.pb.UserInfo\"\000\022)\n"
+  "\007DelUser\022\014.pb.UserInfo\032\016.pb.NomalReply\"\000"
+  "\022/\n\010UserList\022\017.pb.UserListReq\032\020.pb.Strin"
+  "gsReply\"\000\022\'\n\010DelGroup\022\t.pb.Group\032\016.pb.No"
+  "malReply\"\000\022\'\n\tGroupSize\022\t.pb.Group\032\r.pb."
+  "SizeReply\"\000\022!\n\004Info\022\010.pb.Null\032\r.pb.InfoR"
+  "eply\"\000b\006proto3"
+,
+  "search.proto", &assign_descriptors_table_search_2eproto, 934,
+};
 
-void protobuf_RegisterTypes(const ::std::string&) GOOGLE_PROTOBUF_ATTRIBUTE_COLD;
-void protobuf_RegisterTypes(const ::std::string&) {
-  protobuf_AssignDescriptorsOnce();
-  ::google::protobuf::internal::RegisterAllTypes(file_level_metadata, 13);
-}
-
-void AddDescriptorsImpl() {
-  InitDefaults();
-  static const char descriptor[] GOOGLE_PROTOBUF_ATTRIBUTE_SECTION_VARIABLE(protodesc_cold) = {
-      "\n\014search.proto\022\002pb\"\031\n\tSizeReply\022\014\n\004size\030"
-      "\001 \001(\004\"\006\n\004Null\"\032\n\007Feature\022\017\n\007feature\030\001 \003("
-      "\002\"6\n\010UserInfo\022\r\n\005group\030\001 \001(\t\022\n\n\002id\030\002 \001(\t"
-      "\022\017\n\007feature\030\003 \003(\002\"\031\n\nNomalReply\022\013\n\003ret\030\001"
-      " \001(\010\"\036\n\014StringsReply\022\016\n\006values\030\001 \003(\t\"\026\n\005"
-      "Group\022\r\n\005group\030\001 \001(\t\"7\n\013UserListReq\022\r\n\005g"
-      "roup\030\001 \001(\t\022\014\n\004skey\030\002 \001(\t\022\013\n\003num\030\003 \001(\005\"/\n"
-      "\rSearchRequest\022\r\n\005group\030\001 \001(\t\022\017\n\007feature"
-      "\030\002 \003(\002\"Z\n\013SearchReply\022#\n\005users\030\001 \003(\0132\024.p"
-      "b.SearchReply.User\032&\n\004User\022\014\n\004name\030\001 \001(\t"
-      "\022\020\n\010distance\030\002 \001(\002\"o\n\tInfoReply\022\021\n\tGroup"
-      "sLen\030\001 \001(\005\022\'\n\006groups\030\002 \003(\0132\027.pb.InfoRepl"
-      "y.GroupInfo\032&\n\tGroupInfo\022\014\n\004name\030\001 \001(\t\022\013"
-      "\n\003len\030\002 \001(\0052\210\003\n\006Facedb\022.\n\006Search\022\021.pb.Se"
-      "archRequest\032\017.pb.SearchReply\"\000\022)\n\tGroupL"
-      "ist\022\010.pb.Null\032\020.pb.StringsReply\"\000\022)\n\007Add"
-      "User\022\014.pb.UserInfo\032\016.pb.NomalReply\"\000\022\'\n\007"
-      "GetUser\022\014.pb.UserInfo\032\014.pb.UserInfo\"\000\022)\n"
-      "\007DelUser\022\014.pb.UserInfo\032\016.pb.NomalReply\"\000"
-      "\022/\n\010UserList\022\017.pb.UserListReq\032\020.pb.Strin"
-      "gsReply\"\000\022\'\n\010DelGroup\022\t.pb.Group\032\016.pb.No"
-      "malReply\"\000\022\'\n\tGroupSize\022\t.pb.Group\032\r.pb."
-      "SizeReply\"\000\022!\n\004Info\022\010.pb.Null\032\r.pb.InfoR"
-      "eply\"\000b\006proto3"
+void AddDescriptors_search_2eproto() {
+  static constexpr ::google::protobuf::internal::InitFunc deps[1] =
+  {
   };
-  ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-      descriptor, 934);
-  ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
-    "search.proto", &protobuf_RegisterTypes);
+ ::google::protobuf::internal::AddDescriptors(&descriptor_table_search_2eproto, deps, 0);
 }
 
-void AddDescriptors() {
-  static ::google::protobuf::internal::once_flag once;
-  ::google::protobuf::internal::call_once(once, AddDescriptorsImpl);
-}
-// Force AddDescriptors() to be called at dynamic initialization time.
-struct StaticDescriptorInitializer {
-  StaticDescriptorInitializer() {
-    AddDescriptors();
-  }
-} static_descriptor_initializer;
-}  // namespace protobuf_search_2eproto
+// Force running AddDescriptors() at dynamic initialization time.
+static bool dynamic_init_dummy_search_2eproto = []() { AddDescriptors_search_2eproto(); return true; }();
 namespace pb {
 
 // ===================================================================
 
 void SizeReply::InitAsDefaultInstance() {
 }
+class SizeReply::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SizeReply::kSizeFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SizeReply::SizeReply()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_SizeReply.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.SizeReply)
 }
@@ -501,7 +468,7 @@ SizeReply::SizeReply(const SizeReply& from)
 }
 
 void SizeReply::SharedCtor() {
-  size_ = GOOGLE_ULONGLONG(0);
+  size_ = PROTOBUF_ULONGLONG(0);
 }
 
 SizeReply::~SizeReply() {
@@ -515,13 +482,8 @@ void SizeReply::SharedDtor() {
 void SizeReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SizeReply::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const SizeReply& SizeReply::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_SizeReply.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_SizeReply_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -532,13 +494,60 @@ void SizeReply::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  size_ = GOOGLE_ULONGLONG(0);
+  size_ = PROTOBUF_ULONGLONG(0);
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* SizeReply::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<SizeReply*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // uint64 size = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val;
+        ptr = Varint::Parse64(ptr, &val);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ::google::protobuf::uint64 value = val;
+        msg->set_size(value);
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool SizeReply::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.SizeReply)
   for (;;) {
@@ -548,8 +557,7 @@ bool SizeReply::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // uint64 size = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::uint64, ::google::protobuf::internal::WireFormatLite::TYPE_UINT64>(
@@ -579,6 +587,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void SizeReply::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -591,9 +600,9 @@ void SizeReply::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteUInt64(1, this->size(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.SizeReply)
 }
@@ -610,9 +619,9 @@ void SizeReply::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteUInt64ToArray(1, this->size(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.SizeReply)
   return target;
@@ -622,11 +631,15 @@ size_t SizeReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.SizeReply)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // uint64 size = 1;
   if (this->size() != 0) {
     total_size += 1 +
@@ -643,7 +656,7 @@ void SizeReply::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.SizeReply)
   GOOGLE_DCHECK_NE(&from, this);
   const SizeReply* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SizeReply>(
+      ::google::protobuf::DynamicCastToGenerated<SizeReply>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.SizeReply)
@@ -690,13 +703,13 @@ void SizeReply::Swap(SizeReply* other) {
 }
 void SizeReply::InternalSwap(SizeReply* other) {
   using std::swap;
-  swap(size_, other->size_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(size_, other->size_);
 }
 
 ::google::protobuf::Metadata SizeReply::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -704,13 +717,15 @@ void SizeReply::InternalSwap(SizeReply* other) {
 
 void Null::InitAsDefaultInstance() {
 }
+class Null::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Null::Null()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_Null.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.Null)
 }
@@ -735,13 +750,8 @@ void Null::SharedDtor() {
 void Null::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Null::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Null& Null::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_Null.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_Null_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -755,9 +765,46 @@ void Null::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Null::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Null*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool Null::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.Null)
   for (;;) {
@@ -779,6 +826,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void Null::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -786,9 +834,9 @@ void Null::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.Null)
 }
@@ -800,9 +848,9 @@ void Null::SerializeWithCachedSizes(
   ::google::protobuf::uint32 cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.Null)
   return target;
@@ -812,11 +860,15 @@ size_t Null::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.Null)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   int cached_size = ::google::protobuf::internal::ToCachedSize(total_size);
   SetCachedSize(cached_size);
   return total_size;
@@ -826,7 +878,7 @@ void Null::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.Null)
   GOOGLE_DCHECK_NE(&from, this);
   const Null* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Null>(
+      ::google::protobuf::DynamicCastToGenerated<Null>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Null)
@@ -874,8 +926,8 @@ void Null::InternalSwap(Null* other) {
 }
 
 ::google::protobuf::Metadata Null::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -883,14 +935,16 @@ void Null::InternalSwap(Null* other) {
 
 void Feature::InitAsDefaultInstance() {
 }
+class Feature::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Feature::kFeatureFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Feature::Feature()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_Feature.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.Feature)
 }
@@ -916,13 +970,8 @@ void Feature::SharedDtor() {
 void Feature::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Feature::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Feature& Feature::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_Feature.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_Feature_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -937,9 +986,68 @@ void Feature::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Feature::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Feature*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // repeated float feature = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) == 10) {
+          ptr = Varint::Parse32Inline(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::google::protobuf::internal::PackedFloatParser;
+          object = msg->mutable_feature();
+          if (size > end - ptr) goto len_delim_till_end;
+          auto newend = ptr + size;
+          if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+          break;
+        } else if (static_cast<::google::protobuf::uint8>(tag) != 13) goto handle_unusual;
+        do {
+          float val;
+          std::memcpy(&val, ptr, 4);
+          ptr += 4;
+          msg->add_feature(val);
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 13 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool Feature::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.Feature)
   for (;;) {
@@ -949,14 +1057,11 @@ bool Feature::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated float feature = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, this->mutable_feature())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(13u /* 13 & 0xFF */)) {
+        } else if (static_cast< ::google::protobuf::uint8>(tag) == (13 & 0xFF)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  1, 10u, input, this->mutable_feature())));
@@ -985,6 +1090,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void Feature::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -995,15 +1101,15 @@ void Feature::SerializeWithCachedSizes(
   // repeated float feature = 1;
   if (this->feature_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(1, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(static_cast< ::google::protobuf::uint32>(
-        _feature_cached_byte_size_));
+    output->WriteVarint32(_feature_cached_byte_size_.load(
+        std::memory_order_relaxed));
     ::google::protobuf::internal::WireFormatLite::WriteFloatArray(
       this->feature().data(), this->feature_size(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.Feature)
 }
@@ -1022,15 +1128,15 @@ void Feature::SerializeWithCachedSizes(
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-        static_cast< ::google::protobuf::int32>(
-            _feature_cached_byte_size_), target);
+        _feature_cached_byte_size_.load(std::memory_order_relaxed),
+         target);
     target = ::google::protobuf::internal::WireFormatLite::
       WriteFloatNoTagToArray(this->feature_, target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.Feature)
   return target;
@@ -1040,11 +1146,15 @@ size_t Feature::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.Feature)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated float feature = 1;
   {
     unsigned int count = static_cast<unsigned int>(this->feature_size());
@@ -1052,12 +1162,11 @@ size_t Feature::ByteSizeLong() const {
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-            static_cast< ::google::protobuf::int32>(data_size));
+            static_cast<::google::protobuf::int32>(data_size));
     }
     int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _feature_cached_byte_size_ = cached_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
+    _feature_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
@@ -1070,7 +1179,7 @@ void Feature::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.Feature)
   GOOGLE_DCHECK_NE(&from, this);
   const Feature* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Feature>(
+      ::google::protobuf::DynamicCastToGenerated<Feature>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Feature)
@@ -1115,13 +1224,13 @@ void Feature::Swap(Feature* other) {
 }
 void Feature::InternalSwap(Feature* other) {
   using std::swap;
-  feature_.InternalSwap(&other->feature_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  feature_.InternalSwap(&other->feature_);
 }
 
 ::google::protobuf::Metadata Feature::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -1129,6 +1238,10 @@ void Feature::InternalSwap(Feature* other) {
 
 void UserInfo::InitAsDefaultInstance() {
 }
+class UserInfo::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int UserInfo::kGroupFieldNumber;
 const int UserInfo::kIdFieldNumber;
@@ -1137,8 +1250,6 @@ const int UserInfo::kFeatureFieldNumber;
 
 UserInfo::UserInfo()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_UserInfo.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.UserInfo)
 }
@@ -1159,6 +1270,8 @@ UserInfo::UserInfo(const UserInfo& from)
 }
 
 void UserInfo::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_UserInfo_search_2eproto.base);
   group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   id_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
@@ -1176,13 +1289,8 @@ void UserInfo::SharedDtor() {
 void UserInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* UserInfo::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const UserInfo& UserInfo::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_UserInfo.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_UserInfo_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -1199,9 +1307,100 @@ void UserInfo::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* UserInfo::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<UserInfo*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string group = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.UserInfo.group");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_group();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      // string id = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.UserInfo.id");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_id();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      // repeated float feature = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) == 26) {
+          ptr = Varint::Parse32Inline(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::google::protobuf::internal::PackedFloatParser;
+          object = msg->mutable_feature();
+          if (size > end - ptr) goto len_delim_till_end;
+          auto newend = ptr + size;
+          if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+          break;
+        } else if (static_cast<::google::protobuf::uint8>(tag) != 29) goto handle_unusual;
+        do {
+          float val;
+          std::memcpy(&val, ptr, 4);
+          ptr += 4;
+          msg->add_feature(val);
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 29 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool UserInfo::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.UserInfo)
   for (;;) {
@@ -1211,8 +1410,7 @@ bool UserInfo::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string group = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_group()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1227,8 +1425,7 @@ bool UserInfo::MergePartialFromCodedStream(
 
       // string id = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_id()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1243,14 +1440,11 @@ bool UserInfo::MergePartialFromCodedStream(
 
       // repeated float feature = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(26u /* 26 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (26 & 0xFF)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, this->mutable_feature())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(29u /* 29 & 0xFF */)) {
+        } else if (static_cast< ::google::protobuf::uint8>(tag) == (29 & 0xFF)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  1, 26u, input, this->mutable_feature())));
@@ -1279,6 +1473,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void UserInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -1309,15 +1504,15 @@ void UserInfo::SerializeWithCachedSizes(
   // repeated float feature = 3;
   if (this->feature_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(3, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(static_cast< ::google::protobuf::uint32>(
-        _feature_cached_byte_size_));
+    output->WriteVarint32(_feature_cached_byte_size_.load(
+        std::memory_order_relaxed));
     ::google::protobuf::internal::WireFormatLite::WriteFloatArray(
       this->feature().data(), this->feature_size(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.UserInfo)
 }
@@ -1358,15 +1553,15 @@ void UserInfo::SerializeWithCachedSizes(
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-        static_cast< ::google::protobuf::int32>(
-            _feature_cached_byte_size_), target);
+        _feature_cached_byte_size_.load(std::memory_order_relaxed),
+         target);
     target = ::google::protobuf::internal::WireFormatLite::
       WriteFloatNoTagToArray(this->feature_, target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.UserInfo)
   return target;
@@ -1376,11 +1571,15 @@ size_t UserInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.UserInfo)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated float feature = 3;
   {
     unsigned int count = static_cast<unsigned int>(this->feature_size());
@@ -1388,12 +1587,11 @@ size_t UserInfo::ByteSizeLong() const {
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-            static_cast< ::google::protobuf::int32>(data_size));
+            static_cast<::google::protobuf::int32>(data_size));
     }
     int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _feature_cached_byte_size_ = cached_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
+    _feature_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
@@ -1420,7 +1618,7 @@ void UserInfo::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.UserInfo)
   GOOGLE_DCHECK_NE(&from, this);
   const UserInfo* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const UserInfo>(
+      ::google::protobuf::DynamicCastToGenerated<UserInfo>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.UserInfo)
@@ -1473,17 +1671,17 @@ void UserInfo::Swap(UserInfo* other) {
 }
 void UserInfo::InternalSwap(UserInfo* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   feature_.InternalSwap(&other->feature_);
   group_.Swap(&other->group_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   id_.Swap(&other->id_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata UserInfo::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -1491,14 +1689,16 @@ void UserInfo::InternalSwap(UserInfo* other) {
 
 void NomalReply::InitAsDefaultInstance() {
 }
+class NomalReply::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int NomalReply::kRetFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 NomalReply::NomalReply()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_NomalReply.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.NomalReply)
 }
@@ -1525,13 +1725,8 @@ void NomalReply::SharedDtor() {
 void NomalReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* NomalReply::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const NomalReply& NomalReply::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_NomalReply.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_NomalReply_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -1546,9 +1741,56 @@ void NomalReply::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* NomalReply::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<NomalReply*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // bool ret = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val;
+        ptr = Varint::Parse64(ptr, &val);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        bool value = val;
+        msg->set_ret(value);
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool NomalReply::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.NomalReply)
   for (;;) {
@@ -1558,8 +1800,7 @@ bool NomalReply::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // bool ret = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
@@ -1589,6 +1830,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void NomalReply::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -1601,9 +1843,9 @@ void NomalReply::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->ret(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.NomalReply)
 }
@@ -1620,9 +1862,9 @@ void NomalReply::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->ret(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.NomalReply)
   return target;
@@ -1632,11 +1874,15 @@ size_t NomalReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.NomalReply)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // bool ret = 1;
   if (this->ret() != 0) {
     total_size += 1 + 1;
@@ -1651,7 +1897,7 @@ void NomalReply::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.NomalReply)
   GOOGLE_DCHECK_NE(&from, this);
   const NomalReply* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const NomalReply>(
+      ::google::protobuf::DynamicCastToGenerated<NomalReply>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.NomalReply)
@@ -1698,13 +1944,13 @@ void NomalReply::Swap(NomalReply* other) {
 }
 void NomalReply::InternalSwap(NomalReply* other) {
   using std::swap;
-  swap(ret_, other->ret_);
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  swap(ret_, other->ret_);
 }
 
 ::google::protobuf::Metadata NomalReply::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -1712,14 +1958,16 @@ void NomalReply::InternalSwap(NomalReply* other) {
 
 void StringsReply::InitAsDefaultInstance() {
 }
+class StringsReply::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int StringsReply::kValuesFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 StringsReply::StringsReply()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_StringsReply.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.StringsReply)
 }
@@ -1732,6 +1980,8 @@ StringsReply::StringsReply(const StringsReply& from)
 }
 
 void StringsReply::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_StringsReply_search_2eproto.base);
 }
 
 StringsReply::~StringsReply() {
@@ -1745,13 +1995,8 @@ void StringsReply::SharedDtor() {
 void StringsReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* StringsReply::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const StringsReply& StringsReply::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_StringsReply.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_StringsReply_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -1766,9 +2011,65 @@ void StringsReply::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* StringsReply::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<StringsReply*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // repeated string values = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        do {
+          ptr = Varint::Parse32Inline(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          ctx->extra_parse_data().SetFieldName("pb.StringsReply.values");
+          parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+          ::std::string* str = msg->add_values();
+          str->clear();
+          object = str;
+          if (size > end - ptr) goto len_delim_till_end;
+          auto newend = ptr + size;
+          if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool StringsReply::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.StringsReply)
   for (;;) {
@@ -1778,8 +2079,7 @@ bool StringsReply::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated string values = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->add_values()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -1812,6 +2112,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void StringsReply::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -1829,9 +2130,9 @@ void StringsReply::SerializeWithCachedSizes(
       1, this->values(i), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.StringsReply)
 }
@@ -1853,9 +2154,9 @@ void StringsReply::SerializeWithCachedSizes(
       WriteStringToArray(1, this->values(i), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.StringsReply)
   return target;
@@ -1865,11 +2166,15 @@ size_t StringsReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.StringsReply)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated string values = 1;
   total_size += 1 *
       ::google::protobuf::internal::FromIntSize(this->values_size());
@@ -1887,7 +2192,7 @@ void StringsReply::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.StringsReply)
   GOOGLE_DCHECK_NE(&from, this);
   const StringsReply* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const StringsReply>(
+      ::google::protobuf::DynamicCastToGenerated<StringsReply>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.StringsReply)
@@ -1932,13 +2237,13 @@ void StringsReply::Swap(StringsReply* other) {
 }
 void StringsReply::InternalSwap(StringsReply* other) {
   using std::swap;
-  values_.InternalSwap(CastToBase(&other->values_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  values_.InternalSwap(CastToBase(&other->values_));
 }
 
 ::google::protobuf::Metadata StringsReply::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -1946,14 +2251,16 @@ void StringsReply::InternalSwap(StringsReply* other) {
 
 void Group::InitAsDefaultInstance() {
 }
+class Group::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int Group::kGroupFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 Group::Group()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_Group.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.Group)
 }
@@ -1969,6 +2276,8 @@ Group::Group(const Group& from)
 }
 
 void Group::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_Group_search_2eproto.base);
   group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -1984,13 +2293,8 @@ void Group::SharedDtor() {
 void Group::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* Group::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const Group& Group::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_Group.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_Group_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -2005,9 +2309,62 @@ void Group::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* Group::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<Group*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string group = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.Group.group");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_group();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool Group::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.Group)
   for (;;) {
@@ -2017,8 +2374,7 @@ bool Group::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string group = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_group()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2050,6 +2406,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void Group::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -2067,9 +2424,9 @@ void Group::SerializeWithCachedSizes(
       1, this->group(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.Group)
 }
@@ -2092,9 +2449,9 @@ void Group::SerializeWithCachedSizes(
         1, this->group(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.Group)
   return target;
@@ -2104,11 +2461,15 @@ size_t Group::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.Group)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string group = 1;
   if (this->group().size() > 0) {
     total_size += 1 +
@@ -2125,7 +2486,7 @@ void Group::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.Group)
   GOOGLE_DCHECK_NE(&from, this);
   const Group* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const Group>(
+      ::google::protobuf::DynamicCastToGenerated<Group>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.Group)
@@ -2173,14 +2534,14 @@ void Group::Swap(Group* other) {
 }
 void Group::InternalSwap(Group* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   group_.Swap(&other->group_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata Group::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -2188,6 +2549,10 @@ void Group::InternalSwap(Group* other) {
 
 void UserListReq::InitAsDefaultInstance() {
 }
+class UserListReq::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int UserListReq::kGroupFieldNumber;
 const int UserListReq::kSkeyFieldNumber;
@@ -2196,8 +2561,6 @@ const int UserListReq::kNumFieldNumber;
 
 UserListReq::UserListReq()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_UserListReq.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.UserListReq)
 }
@@ -2218,6 +2581,8 @@ UserListReq::UserListReq(const UserListReq& from)
 }
 
 void UserListReq::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_UserListReq_search_2eproto.base);
   group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   skey_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   num_ = 0;
@@ -2236,13 +2601,8 @@ void UserListReq::SharedDtor() {
 void UserListReq::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* UserListReq::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const UserListReq& UserListReq::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_UserListReq.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_UserListReq_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -2259,9 +2619,88 @@ void UserListReq::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* UserListReq::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<UserListReq*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string group = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.UserListReq.group");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_group();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      // string skey = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.UserListReq.skey");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_skey();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      // int32 num = 3;
+      case 3: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 24) goto handle_unusual;
+        ::google::protobuf::uint64 val;
+        ptr = Varint::Parse64(ptr, &val);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ::google::protobuf::int32 value = val;
+        msg->set_num(value);
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool UserListReq::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.UserListReq)
   for (;;) {
@@ -2271,8 +2710,7 @@ bool UserListReq::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string group = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_group()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2287,8 +2725,7 @@ bool UserListReq::MergePartialFromCodedStream(
 
       // string skey = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_skey()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2303,8 +2740,7 @@ bool UserListReq::MergePartialFromCodedStream(
 
       // int32 num = 3;
       case 3: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(24u /* 24 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (24 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -2334,6 +2770,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void UserListReq::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -2366,9 +2803,9 @@ void UserListReq::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(3, this->num(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.UserListReq)
 }
@@ -2407,9 +2844,9 @@ void UserListReq::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(3, this->num(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.UserListReq)
   return target;
@@ -2419,11 +2856,15 @@ size_t UserListReq::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.UserListReq)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string group = 1;
   if (this->group().size() > 0) {
     total_size += 1 +
@@ -2454,7 +2895,7 @@ void UserListReq::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.UserListReq)
   GOOGLE_DCHECK_NE(&from, this);
   const UserListReq* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const UserListReq>(
+      ::google::protobuf::DynamicCastToGenerated<UserListReq>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.UserListReq)
@@ -2509,17 +2950,17 @@ void UserListReq::Swap(UserListReq* other) {
 }
 void UserListReq::InternalSwap(UserListReq* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   group_.Swap(&other->group_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   skey_.Swap(&other->skey_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(num_, other->num_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata UserListReq::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -2527,6 +2968,10 @@ void UserListReq::InternalSwap(UserListReq* other) {
 
 void SearchRequest::InitAsDefaultInstance() {
 }
+class SearchRequest::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SearchRequest::kGroupFieldNumber;
 const int SearchRequest::kFeatureFieldNumber;
@@ -2534,8 +2979,6 @@ const int SearchRequest::kFeatureFieldNumber;
 
 SearchRequest::SearchRequest()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_SearchRequest.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.SearchRequest)
 }
@@ -2552,6 +2995,8 @@ SearchRequest::SearchRequest(const SearchRequest& from)
 }
 
 void SearchRequest::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_SearchRequest_search_2eproto.base);
   group_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
 }
 
@@ -2567,13 +3012,8 @@ void SearchRequest::SharedDtor() {
 void SearchRequest::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SearchRequest::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const SearchRequest& SearchRequest::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_SearchRequest.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_SearchRequest_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -2589,9 +3029,84 @@ void SearchRequest::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* SearchRequest::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<SearchRequest*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string group = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.SearchRequest.group");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_group();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      // repeated float feature = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) == 18) {
+          ptr = Varint::Parse32Inline(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::google::protobuf::internal::PackedFloatParser;
+          object = msg->mutable_feature();
+          if (size > end - ptr) goto len_delim_till_end;
+          auto newend = ptr + size;
+          if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+          break;
+        } else if (static_cast<::google::protobuf::uint8>(tag) != 21) goto handle_unusual;
+        do {
+          float val;
+          std::memcpy(&val, ptr, 4);
+          ptr += 4;
+          msg->add_feature(val);
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 21 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool SearchRequest::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.SearchRequest)
   for (;;) {
@@ -2601,8 +3116,7 @@ bool SearchRequest::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string group = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_group()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2617,14 +3131,11 @@ bool SearchRequest::MergePartialFromCodedStream(
 
       // repeated float feature = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, this->mutable_feature())));
-        } else if (
-            static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
+        } else if (static_cast< ::google::protobuf::uint8>(tag) == (21 & 0xFF)) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitiveNoInline<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  1, 18u, input, this->mutable_feature())));
@@ -2653,6 +3164,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void SearchRequest::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -2673,15 +3185,15 @@ void SearchRequest::SerializeWithCachedSizes(
   // repeated float feature = 2;
   if (this->feature_size() > 0) {
     ::google::protobuf::internal::WireFormatLite::WriteTag(2, ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED, output);
-    output->WriteVarint32(static_cast< ::google::protobuf::uint32>(
-        _feature_cached_byte_size_));
+    output->WriteVarint32(_feature_cached_byte_size_.load(
+        std::memory_order_relaxed));
     ::google::protobuf::internal::WireFormatLite::WriteFloatArray(
       this->feature().data(), this->feature_size(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.SearchRequest)
 }
@@ -2711,15 +3223,15 @@ void SearchRequest::SerializeWithCachedSizes(
       ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED,
       target);
     target = ::google::protobuf::io::CodedOutputStream::WriteVarint32ToArray(
-        static_cast< ::google::protobuf::int32>(
-            _feature_cached_byte_size_), target);
+        _feature_cached_byte_size_.load(std::memory_order_relaxed),
+         target);
     target = ::google::protobuf::internal::WireFormatLite::
       WriteFloatNoTagToArray(this->feature_, target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.SearchRequest)
   return target;
@@ -2729,11 +3241,15 @@ size_t SearchRequest::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.SearchRequest)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated float feature = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->feature_size());
@@ -2741,12 +3257,11 @@ size_t SearchRequest::ByteSizeLong() const {
     if (data_size > 0) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
-            static_cast< ::google::protobuf::int32>(data_size));
+            static_cast<::google::protobuf::int32>(data_size));
     }
     int cached_size = ::google::protobuf::internal::ToCachedSize(data_size);
-    GOOGLE_SAFE_CONCURRENT_WRITES_BEGIN();
-    _feature_cached_byte_size_ = cached_size;
-    GOOGLE_SAFE_CONCURRENT_WRITES_END();
+    _feature_cached_byte_size_.store(cached_size,
+                                    std::memory_order_relaxed);
     total_size += data_size;
   }
 
@@ -2766,7 +3281,7 @@ void SearchRequest::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.SearchRequest)
   GOOGLE_DCHECK_NE(&from, this);
   const SearchRequest* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SearchRequest>(
+      ::google::protobuf::DynamicCastToGenerated<SearchRequest>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.SearchRequest)
@@ -2815,15 +3330,15 @@ void SearchRequest::Swap(SearchRequest* other) {
 }
 void SearchRequest::InternalSwap(SearchRequest* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   feature_.InternalSwap(&other->feature_);
   group_.Swap(&other->group_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata SearchRequest::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -2831,6 +3346,10 @@ void SearchRequest::InternalSwap(SearchRequest* other) {
 
 void SearchReply_User::InitAsDefaultInstance() {
 }
+class SearchReply_User::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SearchReply_User::kNameFieldNumber;
 const int SearchReply_User::kDistanceFieldNumber;
@@ -2838,8 +3357,6 @@ const int SearchReply_User::kDistanceFieldNumber;
 
 SearchReply_User::SearchReply_User()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_SearchReply_User.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.SearchReply.User)
 }
@@ -2856,6 +3373,8 @@ SearchReply_User::SearchReply_User(const SearchReply_User& from)
 }
 
 void SearchReply_User::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_SearchReply_User_search_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   distance_ = 0;
 }
@@ -2872,13 +3391,8 @@ void SearchReply_User::SharedDtor() {
 void SearchReply_User::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SearchReply_User::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const SearchReply_User& SearchReply_User::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_SearchReply_User.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_SearchReply_User_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -2894,9 +3408,71 @@ void SearchReply_User::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* SearchReply_User::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<SearchReply_User*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.SearchReply.User.name");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_name();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      // float distance = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 21) goto handle_unusual;
+        float val;
+        std::memcpy(&val, ptr, 4);
+        ptr += 4;
+        msg->set_distance(val);
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool SearchReply_User::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.SearchReply.User)
   for (;;) {
@@ -2906,8 +3482,7 @@ bool SearchReply_User::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string name = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -2922,8 +3497,7 @@ bool SearchReply_User::MergePartialFromCodedStream(
 
       // float distance = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(21u /* 21 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (21 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
@@ -2953,6 +3527,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void SearchReply_User::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -2975,9 +3550,9 @@ void SearchReply_User::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteFloat(2, this->distance(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.SearchReply.User)
 }
@@ -3005,9 +3580,9 @@ void SearchReply_User::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(2, this->distance(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.SearchReply.User)
   return target;
@@ -3017,11 +3592,15 @@ size_t SearchReply_User::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.SearchReply.User)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string name = 1;
   if (this->name().size() > 0) {
     total_size += 1 +
@@ -3043,7 +3622,7 @@ void SearchReply_User::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.SearchReply.User)
   GOOGLE_DCHECK_NE(&from, this);
   const SearchReply_User* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SearchReply_User>(
+      ::google::protobuf::DynamicCastToGenerated<SearchReply_User>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.SearchReply.User)
@@ -3094,15 +3673,15 @@ void SearchReply_User::Swap(SearchReply_User* other) {
 }
 void SearchReply_User::InternalSwap(SearchReply_User* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(distance_, other->distance_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata SearchReply_User::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -3110,14 +3689,16 @@ void SearchReply_User::InternalSwap(SearchReply_User* other) {
 
 void SearchReply::InitAsDefaultInstance() {
 }
+class SearchReply::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int SearchReply::kUsersFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 SearchReply::SearchReply()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_SearchReply.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.SearchReply)
 }
@@ -3130,6 +3711,8 @@ SearchReply::SearchReply(const SearchReply& from)
 }
 
 void SearchReply::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_SearchReply_search_2eproto.base);
 }
 
 SearchReply::~SearchReply() {
@@ -3143,13 +3726,8 @@ void SearchReply::SharedDtor() {
 void SearchReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* SearchReply::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const SearchReply& SearchReply::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_SearchReply.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_SearchReply_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -3164,9 +3742,64 @@ void SearchReply::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* SearchReply::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<SearchReply*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // repeated .pb.SearchReply.User users = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        do {
+          ptr = Varint::Parse32Inline(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::pb::SearchReply_User::_InternalParse;
+          object = msg->add_users();
+          if (size > end - ptr) goto len_delim_till_end;
+          auto newend = ptr + size;
+          bool ok = ctx->ParseExactRange({parser_till_end, object},
+                                         ptr, newend);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          ptr = newend;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 10 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool SearchReply::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.SearchReply)
   for (;;) {
@@ -3176,8 +3809,7 @@ bool SearchReply::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // repeated .pb.SearchReply.User users = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_users()));
         } else {
@@ -3205,6 +3837,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void SearchReply::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -3221,9 +3854,9 @@ void SearchReply::SerializeWithCachedSizes(
       output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.SearchReply)
 }
@@ -3243,9 +3876,9 @@ void SearchReply::SerializeWithCachedSizes(
         1, this->users(static_cast<int>(i)), deterministic, target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.SearchReply)
   return target;
@@ -3255,11 +3888,15 @@ size_t SearchReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.SearchReply)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .pb.SearchReply.User users = 1;
   {
     unsigned int count = static_cast<unsigned int>(this->users_size());
@@ -3280,7 +3917,7 @@ void SearchReply::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.SearchReply)
   GOOGLE_DCHECK_NE(&from, this);
   const SearchReply* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const SearchReply>(
+      ::google::protobuf::DynamicCastToGenerated<SearchReply>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.SearchReply)
@@ -3325,13 +3962,13 @@ void SearchReply::Swap(SearchReply* other) {
 }
 void SearchReply::InternalSwap(SearchReply* other) {
   using std::swap;
-  CastToBase(&users_)->InternalSwap(CastToBase(&other->users_));
   _internal_metadata_.Swap(&other->_internal_metadata_);
+  CastToBase(&users_)->InternalSwap(CastToBase(&other->users_));
 }
 
 ::google::protobuf::Metadata SearchReply::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -3339,6 +3976,10 @@ void SearchReply::InternalSwap(SearchReply* other) {
 
 void InfoReply_GroupInfo::InitAsDefaultInstance() {
 }
+class InfoReply_GroupInfo::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int InfoReply_GroupInfo::kNameFieldNumber;
 const int InfoReply_GroupInfo::kLenFieldNumber;
@@ -3346,8 +3987,6 @@ const int InfoReply_GroupInfo::kLenFieldNumber;
 
 InfoReply_GroupInfo::InfoReply_GroupInfo()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_InfoReply_GroupInfo.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.InfoReply.GroupInfo)
 }
@@ -3364,6 +4003,8 @@ InfoReply_GroupInfo::InfoReply_GroupInfo(const InfoReply_GroupInfo& from)
 }
 
 void InfoReply_GroupInfo::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_InfoReply_GroupInfo_search_2eproto.base);
   name_.UnsafeSetDefault(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   len_ = 0;
 }
@@ -3380,13 +4021,8 @@ void InfoReply_GroupInfo::SharedDtor() {
 void InfoReply_GroupInfo::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* InfoReply_GroupInfo::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const InfoReply_GroupInfo& InfoReply_GroupInfo::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_InfoReply_GroupInfo.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_InfoReply_GroupInfo_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -3402,9 +4038,72 @@ void InfoReply_GroupInfo::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* InfoReply_GroupInfo::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<InfoReply_GroupInfo*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 10) goto handle_unusual;
+        ptr = Varint::Parse32Inline(ptr, &size);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ctx->extra_parse_data().SetFieldName("pb.InfoReply.GroupInfo.name");
+        parser_till_end = ::google::protobuf::internal::StringParserUTF8;
+        ::std::string* str = msg->mutable_name();
+        str->clear();
+        object = str;
+        if (size > end - ptr) goto len_delim_till_end;
+        auto newend = ptr + size;
+        if (size) ptr = parser_till_end(ptr, newend, object, ctx);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr == newend);
+        break;
+      }
+      // int32 len = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 16) goto handle_unusual;
+        ::google::protobuf::uint64 val;
+        ptr = Varint::Parse64(ptr, &val);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ::google::protobuf::int32 value = val;
+        msg->set_len(value);
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool InfoReply_GroupInfo::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.InfoReply.GroupInfo)
   for (;;) {
@@ -3414,8 +4113,7 @@ bool InfoReply_GroupInfo::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // string name = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(10u /* 10 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (10 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadString(
                 input, this->mutable_name()));
           DO_(::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
@@ -3430,8 +4128,7 @@ bool InfoReply_GroupInfo::MergePartialFromCodedStream(
 
       // int32 len = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(16u /* 16 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (16 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -3461,6 +4158,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void InfoReply_GroupInfo::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -3483,9 +4181,9 @@ void InfoReply_GroupInfo::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->len(), output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.InfoReply.GroupInfo)
 }
@@ -3513,9 +4211,9 @@ void InfoReply_GroupInfo::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->len(), target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.InfoReply.GroupInfo)
   return target;
@@ -3525,11 +4223,15 @@ size_t InfoReply_GroupInfo::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.InfoReply.GroupInfo)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // string name = 1;
   if (this->name().size() > 0) {
     total_size += 1 +
@@ -3553,7 +4255,7 @@ void InfoReply_GroupInfo::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.InfoReply.GroupInfo)
   GOOGLE_DCHECK_NE(&from, this);
   const InfoReply_GroupInfo* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const InfoReply_GroupInfo>(
+      ::google::protobuf::DynamicCastToGenerated<InfoReply_GroupInfo>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.InfoReply.GroupInfo)
@@ -3604,15 +4306,15 @@ void InfoReply_GroupInfo::Swap(InfoReply_GroupInfo* other) {
 }
 void InfoReply_GroupInfo::InternalSwap(InfoReply_GroupInfo* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   name_.Swap(&other->name_, &::google::protobuf::internal::GetEmptyStringAlreadyInited(),
     GetArenaNoVirtual());
   swap(len_, other->len_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata InfoReply_GroupInfo::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -3620,6 +4322,10 @@ void InfoReply_GroupInfo::InternalSwap(InfoReply_GroupInfo* other) {
 
 void InfoReply::InitAsDefaultInstance() {
 }
+class InfoReply::HasBitSetters {
+ public:
+};
+
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int InfoReply::kGroupsLenFieldNumber;
 const int InfoReply::kGroupsFieldNumber;
@@ -3627,8 +4333,6 @@ const int InfoReply::kGroupsFieldNumber;
 
 InfoReply::InfoReply()
   : ::google::protobuf::Message(), _internal_metadata_(NULL) {
-  ::google::protobuf::internal::InitSCC(
-      &protobuf_search_2eproto::scc_info_InfoReply.base);
   SharedCtor();
   // @@protoc_insertion_point(constructor:pb.InfoReply)
 }
@@ -3642,6 +4346,8 @@ InfoReply::InfoReply(const InfoReply& from)
 }
 
 void InfoReply::SharedCtor() {
+  ::google::protobuf::internal::InitSCC(
+      &scc_info_InfoReply_search_2eproto.base);
   groupslen_ = 0;
 }
 
@@ -3656,13 +4362,8 @@ void InfoReply::SharedDtor() {
 void InfoReply::SetCachedSize(int size) const {
   _cached_size_.Set(size);
 }
-const ::google::protobuf::Descriptor* InfoReply::descriptor() {
-  ::protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages].descriptor;
-}
-
 const InfoReply& InfoReply::default_instance() {
-  ::google::protobuf::internal::InitSCC(&protobuf_search_2eproto::scc_info_InfoReply.base);
+  ::google::protobuf::internal::InitSCC(&::scc_info_InfoReply_search_2eproto.base);
   return *internal_default_instance();
 }
 
@@ -3678,9 +4379,74 @@ void InfoReply::Clear() {
   _internal_metadata_.Clear();
 }
 
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* InfoReply::_InternalParse(const char* begin, const char* end, void* object,
+                  ::google::protobuf::internal::ParseContext* ctx) {
+  auto msg = static_cast<InfoReply*>(object);
+  ::google::protobuf::uint32 size; (void)size;
+  int depth; (void)depth;
+  ::google::protobuf::internal::ParseFunc parser_till_end; (void)parser_till_end;
+  auto ptr = begin;
+  while (ptr < end) {
+    ::google::protobuf::uint32 tag;
+    ptr = Varint::Parse32Inline(ptr, &tag);
+    GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+    switch (tag >> 3) {
+      // int32 GroupsLen = 1;
+      case 1: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 8) goto handle_unusual;
+        ::google::protobuf::uint64 val;
+        ptr = Varint::Parse64(ptr, &val);
+        GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+        ::google::protobuf::int32 value = val;
+        msg->set_groupslen(value);
+        break;
+      }
+      // repeated .pb.InfoReply.GroupInfo groups = 2;
+      case 2: {
+        if (static_cast<::google::protobuf::uint8>(tag) != 18) goto handle_unusual;
+        do {
+          ptr = Varint::Parse32Inline(ptr, &size);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ptr);
+          parser_till_end = ::pb::InfoReply_GroupInfo::_InternalParse;
+          object = msg->add_groups();
+          if (size > end - ptr) goto len_delim_till_end;
+          auto newend = ptr + size;
+          bool ok = ctx->ParseExactRange({parser_till_end, object},
+                                         ptr, newend);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          ptr = newend;
+          if (ptr >= end) break;
+        } while ((::google::protobuf::io::UnalignedLoad<::google::protobuf::uint64>(ptr) & 255) == 18 && (ptr += 1));
+        break;
+      }
+      default: {
+      handle_unusual: (void)&&handle_unusual;
+        if ((tag & 7) == 4 || tag == 0) {
+          bool ok = ctx->ValidEndGroup(tag);
+          GOOGLE_PROTOBUF_PARSER_ASSERT(ok);
+          return ptr;
+        }
+        auto res = UnknownFieldParse(tag, {_InternalParse, msg},
+          ptr, end, msg->_internal_metadata_.mutable_unknown_fields(), ctx);
+        ptr = res.first;
+        if (res.second) return ptr;
+      }
+    }  // switch
+  }  // while
+  return ptr;
+len_delim_till_end: (void)&&len_delim_till_end;
+  return ctx->StoreAndTailCall(ptr, end, {_InternalParse, msg},
+                                 {parser_till_end, object}, size);
+group_continues: (void)&&group_continues;
+  GOOGLE_DCHECK(ptr >= end);
+  ctx->StoreGroup({_InternalParse, msg}, {parser_till_end, object}, depth);
+  return ptr;
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 bool InfoReply::MergePartialFromCodedStream(
     ::google::protobuf::io::CodedInputStream* input) {
-#define DO_(EXPRESSION) if (!GOOGLE_PREDICT_TRUE(EXPRESSION)) goto failure
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
   ::google::protobuf::uint32 tag;
   // @@protoc_insertion_point(parse_start:pb.InfoReply)
   for (;;) {
@@ -3690,8 +4456,7 @@ bool InfoReply::MergePartialFromCodedStream(
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
       // int32 GroupsLen = 1;
       case 1: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(8u /* 8 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (8 & 0xFF)) {
 
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
@@ -3704,8 +4469,7 @@ bool InfoReply::MergePartialFromCodedStream(
 
       // repeated .pb.InfoReply.GroupInfo groups = 2;
       case 2: {
-        if (static_cast< ::google::protobuf::uint8>(tag) ==
-            static_cast< ::google::protobuf::uint8>(18u /* 18 & 0xFF */)) {
+        if (static_cast< ::google::protobuf::uint8>(tag) == (18 & 0xFF)) {
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessage(
                 input, add_groups()));
         } else {
@@ -3733,6 +4497,7 @@ failure:
   return false;
 #undef DO_
 }
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
 
 void InfoReply::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
@@ -3754,9 +4519,9 @@ void InfoReply::SerializeWithCachedSizes(
       output);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     ::google::protobuf::internal::WireFormat::SerializeUnknownFields(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), output);
+        _internal_metadata_.unknown_fields(), output);
   }
   // @@protoc_insertion_point(serialize_end:pb.InfoReply)
 }
@@ -3781,9 +4546,9 @@ void InfoReply::SerializeWithCachedSizes(
         2, this->groups(static_cast<int>(i)), deterministic, target);
   }
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     target = ::google::protobuf::internal::WireFormat::SerializeUnknownFieldsToArray(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()), target);
+        _internal_metadata_.unknown_fields(), target);
   }
   // @@protoc_insertion_point(serialize_to_array_end:pb.InfoReply)
   return target;
@@ -3793,11 +4558,15 @@ size_t InfoReply::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:pb.InfoReply)
   size_t total_size = 0;
 
-  if ((_internal_metadata_.have_unknown_fields() &&  ::google::protobuf::internal::GetProto3PreserveUnknownsDefault())) {
+  if (_internal_metadata_.have_unknown_fields()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
-        (::google::protobuf::internal::GetProto3PreserveUnknownsDefault()   ? _internal_metadata_.unknown_fields()   : _internal_metadata_.default_instance()));
+        _internal_metadata_.unknown_fields());
   }
+  ::google::protobuf::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
   // repeated .pb.InfoReply.GroupInfo groups = 2;
   {
     unsigned int count = static_cast<unsigned int>(this->groups_size());
@@ -3825,7 +4594,7 @@ void InfoReply::MergeFrom(const ::google::protobuf::Message& from) {
 // @@protoc_insertion_point(generalized_merge_from_start:pb.InfoReply)
   GOOGLE_DCHECK_NE(&from, this);
   const InfoReply* source =
-      ::google::protobuf::internal::DynamicCastToGenerated<const InfoReply>(
+      ::google::protobuf::DynamicCastToGenerated<InfoReply>(
           &from);
   if (source == NULL) {
   // @@protoc_insertion_point(generalized_merge_from_cast_fail:pb.InfoReply)
@@ -3873,14 +4642,14 @@ void InfoReply::Swap(InfoReply* other) {
 }
 void InfoReply::InternalSwap(InfoReply* other) {
   using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
   CastToBase(&groups_)->InternalSwap(CastToBase(&other->groups_));
   swap(groupslen_, other->groupslen_);
-  _internal_metadata_.Swap(&other->_internal_metadata_);
 }
 
 ::google::protobuf::Metadata InfoReply::GetMetadata() const {
-  protobuf_search_2eproto::protobuf_AssignDescriptorsOnce();
-  return ::protobuf_search_2eproto::file_level_metadata[kIndexInFileMessages];
+  ::google::protobuf::internal::AssignDescriptors(&::assign_descriptors_table_search_2eproto);
+  return ::file_level_metadata_search_2eproto[kIndexInFileMessages];
 }
 
 
@@ -3888,46 +4657,47 @@ void InfoReply::InternalSwap(InfoReply* other) {
 }  // namespace pb
 namespace google {
 namespace protobuf {
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::SizeReply* Arena::CreateMaybeMessage< ::pb::SizeReply >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::SizeReply* Arena::CreateMaybeMessage< ::pb::SizeReply >(Arena* arena) {
   return Arena::CreateInternal< ::pb::SizeReply >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::Null* Arena::CreateMaybeMessage< ::pb::Null >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::Null* Arena::CreateMaybeMessage< ::pb::Null >(Arena* arena) {
   return Arena::CreateInternal< ::pb::Null >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::Feature* Arena::CreateMaybeMessage< ::pb::Feature >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::Feature* Arena::CreateMaybeMessage< ::pb::Feature >(Arena* arena) {
   return Arena::CreateInternal< ::pb::Feature >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::UserInfo* Arena::CreateMaybeMessage< ::pb::UserInfo >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::UserInfo* Arena::CreateMaybeMessage< ::pb::UserInfo >(Arena* arena) {
   return Arena::CreateInternal< ::pb::UserInfo >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::NomalReply* Arena::CreateMaybeMessage< ::pb::NomalReply >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::NomalReply* Arena::CreateMaybeMessage< ::pb::NomalReply >(Arena* arena) {
   return Arena::CreateInternal< ::pb::NomalReply >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::StringsReply* Arena::CreateMaybeMessage< ::pb::StringsReply >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::StringsReply* Arena::CreateMaybeMessage< ::pb::StringsReply >(Arena* arena) {
   return Arena::CreateInternal< ::pb::StringsReply >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::Group* Arena::CreateMaybeMessage< ::pb::Group >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::Group* Arena::CreateMaybeMessage< ::pb::Group >(Arena* arena) {
   return Arena::CreateInternal< ::pb::Group >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::UserListReq* Arena::CreateMaybeMessage< ::pb::UserListReq >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::UserListReq* Arena::CreateMaybeMessage< ::pb::UserListReq >(Arena* arena) {
   return Arena::CreateInternal< ::pb::UserListReq >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::SearchRequest* Arena::CreateMaybeMessage< ::pb::SearchRequest >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::SearchRequest* Arena::CreateMaybeMessage< ::pb::SearchRequest >(Arena* arena) {
   return Arena::CreateInternal< ::pb::SearchRequest >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::SearchReply_User* Arena::CreateMaybeMessage< ::pb::SearchReply_User >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::SearchReply_User* Arena::CreateMaybeMessage< ::pb::SearchReply_User >(Arena* arena) {
   return Arena::CreateInternal< ::pb::SearchReply_User >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::SearchReply* Arena::CreateMaybeMessage< ::pb::SearchReply >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::SearchReply* Arena::CreateMaybeMessage< ::pb::SearchReply >(Arena* arena) {
   return Arena::CreateInternal< ::pb::SearchReply >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::InfoReply_GroupInfo* Arena::CreateMaybeMessage< ::pb::InfoReply_GroupInfo >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::InfoReply_GroupInfo* Arena::CreateMaybeMessage< ::pb::InfoReply_GroupInfo >(Arena* arena) {
   return Arena::CreateInternal< ::pb::InfoReply_GroupInfo >(arena);
 }
-template<> GOOGLE_PROTOBUF_ATTRIBUTE_NOINLINE ::pb::InfoReply* Arena::CreateMaybeMessage< ::pb::InfoReply >(Arena* arena) {
+template<> PROTOBUF_NOINLINE ::pb::InfoReply* Arena::CreateMaybeMessage< ::pb::InfoReply >(Arena* arena) {
   return Arena::CreateInternal< ::pb::InfoReply >(arena);
 }
 }  // namespace protobuf
 }  // namespace google
 
 // @@protoc_insertion_point(global_scope)
+#include <google/protobuf/port_undef.inc>
