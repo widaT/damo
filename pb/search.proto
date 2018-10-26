@@ -14,6 +14,7 @@ service Facedb {
     rpc UserList(UserListReq) returns (StringsReply) {}
     rpc DelGroup(Group) returns (NomalReply) {}
     rpc GroupSize(Group) returns (SizeReply) {}
+    rpc Info(Null) returns (InfoReply) {}
 }
 
 message SizeReply{
@@ -61,4 +62,14 @@ message SearchReply {
         float  distance = 2;
     }
     repeated User users  = 1;
+}
+
+
+message InfoReply {
+    message GroupInfo {
+        string name = 1;
+        int32 len= 2;
+    }
+    int32 GroupsLen = 1;
+    repeated GroupInfo groups  = 2;
 }

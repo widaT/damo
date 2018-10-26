@@ -91,6 +91,13 @@ class Facedb final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::SizeReply>> PrepareAsyncGroupSize(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::SizeReply>>(PrepareAsyncGroupSizeRaw(context, request, cq));
     }
+    virtual ::grpc::Status Info(::grpc::ClientContext* context, const ::pb::Null& request, ::pb::InfoReply* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::InfoReply>> AsyncInfo(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::InfoReply>>(AsyncInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::InfoReply>> PrepareAsyncInfo(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::pb::InfoReply>>(PrepareAsyncInfoRaw(context, request, cq));
+    }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
@@ -102,6 +109,7 @@ class Facedb final {
       virtual void UserList(::grpc::ClientContext* context, const ::pb::UserListReq* request, ::pb::StringsReply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void DelGroup(::grpc::ClientContext* context, const ::pb::Group* request, ::pb::NomalReply* response, std::function<void(::grpc::Status)>) = 0;
       virtual void GroupSize(::grpc::ClientContext* context, const ::pb::Group* request, ::pb::SizeReply* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void Info(::grpc::ClientContext* context, const ::pb::Null* request, ::pb::InfoReply* response, std::function<void(::grpc::Status)>) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
@@ -121,6 +129,8 @@ class Facedb final {
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::NomalReply>* PrepareAsyncDelGroupRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::SizeReply>* AsyncGroupSizeRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) = 0;
     virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::SizeReply>* PrepareAsyncGroupSizeRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::InfoReply>* AsyncInfoRaw(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::pb::InfoReply>* PrepareAsyncInfoRaw(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
@@ -181,6 +191,13 @@ class Facedb final {
     std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::SizeReply>> PrepareAsyncGroupSize(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) {
       return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::SizeReply>>(PrepareAsyncGroupSizeRaw(context, request, cq));
     }
+    ::grpc::Status Info(::grpc::ClientContext* context, const ::pb::Null& request, ::pb::InfoReply* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::InfoReply>> AsyncInfo(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::InfoReply>>(AsyncInfoRaw(context, request, cq));
+    }
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::InfoReply>> PrepareAsyncInfo(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::pb::InfoReply>>(PrepareAsyncInfoRaw(context, request, cq));
+    }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
@@ -192,6 +209,7 @@ class Facedb final {
       void UserList(::grpc::ClientContext* context, const ::pb::UserListReq* request, ::pb::StringsReply* response, std::function<void(::grpc::Status)>) override;
       void DelGroup(::grpc::ClientContext* context, const ::pb::Group* request, ::pb::NomalReply* response, std::function<void(::grpc::Status)>) override;
       void GroupSize(::grpc::ClientContext* context, const ::pb::Group* request, ::pb::SizeReply* response, std::function<void(::grpc::Status)>) override;
+      void Info(::grpc::ClientContext* context, const ::pb::Null* request, ::pb::InfoReply* response, std::function<void(::grpc::Status)>) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -219,6 +237,8 @@ class Facedb final {
     ::grpc::ClientAsyncResponseReader< ::pb::NomalReply>* PrepareAsyncDelGroupRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pb::SizeReply>* AsyncGroupSizeRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) override;
     ::grpc::ClientAsyncResponseReader< ::pb::SizeReply>* PrepareAsyncGroupSizeRaw(::grpc::ClientContext* context, const ::pb::Group& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::InfoReply>* AsyncInfoRaw(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::pb::InfoReply>* PrepareAsyncInfoRaw(::grpc::ClientContext* context, const ::pb::Null& request, ::grpc::CompletionQueue* cq) override;
     const ::grpc::internal::RpcMethod rpcmethod_Search_;
     const ::grpc::internal::RpcMethod rpcmethod_GroupList_;
     const ::grpc::internal::RpcMethod rpcmethod_AddUser_;
@@ -227,6 +247,7 @@ class Facedb final {
     const ::grpc::internal::RpcMethod rpcmethod_UserList_;
     const ::grpc::internal::RpcMethod rpcmethod_DelGroup_;
     const ::grpc::internal::RpcMethod rpcmethod_GroupSize_;
+    const ::grpc::internal::RpcMethod rpcmethod_Info_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -242,6 +263,7 @@ class Facedb final {
     virtual ::grpc::Status UserList(::grpc::ServerContext* context, const ::pb::UserListReq* request, ::pb::StringsReply* response);
     virtual ::grpc::Status DelGroup(::grpc::ServerContext* context, const ::pb::Group* request, ::pb::NomalReply* response);
     virtual ::grpc::Status GroupSize(::grpc::ServerContext* context, const ::pb::Group* request, ::pb::SizeReply* response);
+    virtual ::grpc::Status Info(::grpc::ServerContext* context, const ::pb::Null* request, ::pb::InfoReply* response);
   };
   template <class BaseClass>
   class WithAsyncMethod_Search : public BaseClass {
@@ -403,7 +425,27 @@ class Facedb final {
       ::grpc::Service::RequestAsyncUnary(7, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_Search<WithAsyncMethod_GroupList<WithAsyncMethod_AddUser<WithAsyncMethod_GetUser<WithAsyncMethod_DelUser<WithAsyncMethod_UserList<WithAsyncMethod_DelGroup<WithAsyncMethod_GroupSize<Service > > > > > > > > AsyncService;
+  template <class BaseClass>
+  class WithAsyncMethod_Info : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithAsyncMethod_Info() {
+      ::grpc::Service::MarkMethodAsync(8);
+    }
+    ~WithAsyncMethod_Info() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Info(::grpc::ServerContext* context, const ::pb::Null* request, ::pb::InfoReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestInfo(::grpc::ServerContext* context, ::pb::Null* request, ::grpc::ServerAsyncResponseWriter< ::pb::InfoReply>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  typedef WithAsyncMethod_Search<WithAsyncMethod_GroupList<WithAsyncMethod_AddUser<WithAsyncMethod_GetUser<WithAsyncMethod_DelUser<WithAsyncMethod_UserList<WithAsyncMethod_DelGroup<WithAsyncMethod_GroupSize<WithAsyncMethod_Info<Service > > > > > > > > > AsyncService;
   template <class BaseClass>
   class WithGenericMethod_Search : public BaseClass {
    private:
@@ -536,6 +578,23 @@ class Facedb final {
     }
     // disable synchronous version of this method
     ::grpc::Status GroupSize(::grpc::ServerContext* context, const ::pb::Group* request, ::pb::SizeReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+  };
+  template <class BaseClass>
+  class WithGenericMethod_Info : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithGenericMethod_Info() {
+      ::grpc::Service::MarkMethodGeneric(8);
+    }
+    ~WithGenericMethod_Info() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Info(::grpc::ServerContext* context, const ::pb::Null* request, ::pb::InfoReply* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
@@ -701,6 +760,26 @@ class Facedb final {
     }
   };
   template <class BaseClass>
+  class WithRawMethod_Info : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithRawMethod_Info() {
+      ::grpc::Service::MarkMethodRaw(8);
+    }
+    ~WithRawMethod_Info() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable synchronous version of this method
+    ::grpc::Status Info(::grpc::ServerContext* context, const ::pb::Null* request, ::pb::InfoReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    void RequestInfo(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+      ::grpc::Service::RequestAsyncUnary(8, context, request, response, new_call_cq, notification_cq, tag);
+    }
+  };
+  template <class BaseClass>
   class WithStreamedUnaryMethod_Search : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
@@ -860,9 +939,29 @@ class Facedb final {
     // replace default version of method with streamed unary
     virtual ::grpc::Status StreamedGroupSize(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pb::Group,::pb::SizeReply>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_Search<WithStreamedUnaryMethod_GroupList<WithStreamedUnaryMethod_AddUser<WithStreamedUnaryMethod_GetUser<WithStreamedUnaryMethod_DelUser<WithStreamedUnaryMethod_UserList<WithStreamedUnaryMethod_DelGroup<WithStreamedUnaryMethod_GroupSize<Service > > > > > > > > StreamedUnaryService;
+  template <class BaseClass>
+  class WithStreamedUnaryMethod_Info : public BaseClass {
+   private:
+    void BaseClassMustBeDerivedFromService(const Service *service) {}
+   public:
+    WithStreamedUnaryMethod_Info() {
+      ::grpc::Service::MarkMethodStreamed(8,
+        new ::grpc::internal::StreamedUnaryHandler< ::pb::Null, ::pb::InfoReply>(std::bind(&WithStreamedUnaryMethod_Info<BaseClass>::StreamedInfo, this, std::placeholders::_1, std::placeholders::_2)));
+    }
+    ~WithStreamedUnaryMethod_Info() override {
+      BaseClassMustBeDerivedFromService(this);
+    }
+    // disable regular version of this method
+    ::grpc::Status Info(::grpc::ServerContext* context, const ::pb::Null* request, ::pb::InfoReply* response) override {
+      abort();
+      return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
+    }
+    // replace default version of method with streamed unary
+    virtual ::grpc::Status StreamedInfo(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::pb::Null,::pb::InfoReply>* server_unary_streamer) = 0;
+  };
+  typedef WithStreamedUnaryMethod_Search<WithStreamedUnaryMethod_GroupList<WithStreamedUnaryMethod_AddUser<WithStreamedUnaryMethod_GetUser<WithStreamedUnaryMethod_DelUser<WithStreamedUnaryMethod_UserList<WithStreamedUnaryMethod_DelGroup<WithStreamedUnaryMethod_GroupSize<WithStreamedUnaryMethod_Info<Service > > > > > > > > > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_Search<WithStreamedUnaryMethod_GroupList<WithStreamedUnaryMethod_AddUser<WithStreamedUnaryMethod_GetUser<WithStreamedUnaryMethod_DelUser<WithStreamedUnaryMethod_UserList<WithStreamedUnaryMethod_DelGroup<WithStreamedUnaryMethod_GroupSize<Service > > > > > > > > StreamedService;
+  typedef WithStreamedUnaryMethod_Search<WithStreamedUnaryMethod_GroupList<WithStreamedUnaryMethod_AddUser<WithStreamedUnaryMethod_GetUser<WithStreamedUnaryMethod_DelUser<WithStreamedUnaryMethod_UserList<WithStreamedUnaryMethod_DelGroup<WithStreamedUnaryMethod_GroupSize<WithStreamedUnaryMethod_Info<Service > > > > > > > > > StreamedService;
 };
 
 }  // namespace pb

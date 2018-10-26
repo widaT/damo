@@ -14,7 +14,7 @@ namespace db {
     class DB {
         const std::string SPLIT_STR = "--+++--";
         const std::string GROUP_PREFIX = "GROUP___";
-        const uint64_t NEED_MTREAD_SEARCH = 500003290;
+        const uint64_t NEED_MTREAD_SEARCH = 200000; //20w 就采用的多线程search
 
     private:
         rocksdb::DB *db;
@@ -24,29 +24,31 @@ namespace db {
         std::mutex  mutex;
 
     public:
-        DB(std::string);
+        DB(const std::string&);
 
-        int Put(std::string, std::string, float *feature);
+        int Put(const std::string &, const std::string &, float *feature);
 
-        int Get(std::string key, std::string id, float *feautre);
+        int Get(const std::string &, const std::string &, float *feautre);
 
-        int Delete(std::string, std::string);
+        int Delete(const std::string &, const std::string &);
 
-        int Search(std::string, float *, std::vector<pb::SearchReply_User> &);
+        int Search(const std::string &, float *, std::vector<pb::SearchReply_User> &);
 
-        int NSearch(std::string, float *, std::vector<pb::SearchReply_User> &);//单线程
+        int NSearch(const std::string &, float *, std::vector<pb::SearchReply_User> &);//单线程
 
-        int QSearch(std::string, float *, std::vector<pb::SearchReply_User> &);//多线程
+        int QSearch(const std::string &, float *, std::vector<pb::SearchReply_User> &);//多线程
 
-        void _search(std::string, std::string ,std::string , float *, std::vector<pb::SearchReply_User> &users);
+        void _search(const std::string &, const std::string &,const std::string  &, float *, std::vector<pb::SearchReply_User> &,int&);
 
-        int DelGroup(std::string);
+        int DelGroup(const std::string &);
 
         int GroupList(std::vector<std::string> &);
 
-        int UserList(std::string ,std::string ,int,std::vector<std::string>&);
+        int UserList(const std::string & ,const std::string & ,int,std::vector<std::string>&);
 
-        uint64_t GroupSize(std::string);
+        uint64_t GroupSize(const std::string &);
+
+        int Info(pb::InfoReply &);
 
         ~DB();
     };

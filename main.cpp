@@ -91,6 +91,12 @@ class SearchServiceImpl final : public ::Facedb::Service {
         reply->set_size(facedb->GroupSize(req->group()));
         return Status::OK;
     }
+
+    Status Info(ServerContext *context, const Null *request, InfoReply *reply) override {
+      //  InfoReply reply;
+        facedb->Info(*reply);
+        return Status::OK;
+    }
 };
 
 
