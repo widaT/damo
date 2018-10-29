@@ -146,7 +146,8 @@ namespace db {
     }
 
 
-    void DB::_search(const string &group, const string &startkey, const string &endkey, float *feature, vector<SearchReply_User> &users,int &num) {
+    void DB::_search(const string &group, const string &startkey, const string &endkey,
+                                float *feature, vector<SearchReply_User> &users,int &num) {
         auto iter = db->NewIterator(ro);
         float ifeautre[FEATURE_SIZE];
         string skey = group + SPLIT_STR + startkey;
