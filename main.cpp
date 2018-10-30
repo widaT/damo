@@ -1,7 +1,7 @@
 #include <iostream>
 #include "db/db.h"
 #include "pb/search.grpc.pb.h"
-#include <grpcpp/grpcpp.h>
+#include <grpc++/grpc++.h>
 #include "db/ini.h"
 #include "db/facedb.h"
 #include "db/common.h"
