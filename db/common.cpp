@@ -23,7 +23,7 @@ void pack(float *ffeature, string &sfeature) {
 };
 
 void unpack(float *ffeature, string &sfeature) {
-    istringstream r = istringstream(sfeature);
+    istringstream r(sfeature);
     r.read((char *) ffeature, FEATURE_SIZE * sizeof(float));
 }
 
