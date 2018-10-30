@@ -9,6 +9,7 @@
 #include "string"
 #include "../pb/search.pb.h"
 #include <map>
+#include <mutex>
 namespace db {
 
     class DB {
