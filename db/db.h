@@ -21,7 +21,7 @@ namespace db {
         rocksdb::WriteOptions wo = rocksdb::WriteOptions();
         rocksdb::ReadOptions ro = rocksdb::ReadOptions();
         std::map<std::string,int> groupMap;
-        std::mutex  mutex;
+        std::mutex  mut;
 
     public:
         DB(const std::string&);

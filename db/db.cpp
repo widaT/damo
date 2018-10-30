@@ -31,16 +31,16 @@ namespace db {
 
     int DB::Put(const string &group, const string &id, float *feature) {
         rocksdb::Status status;
-        mutex.lock();
+        mut.lock();
         if (groupMap.find(group) == groupMap.end()) {
             groupMap[group] = 1;
             status = db->Put(wo, GROUP_PREFIX + group, to_string(1));
             if (!status.ok()) {
-                mutex.unlock();
+                mut.unlock();
                 return -1;
             }
         }
-        mutex.unlock();
+        mut.unlock();
         string sfeature;
         pack(feature, sfeature);
         status = db->Put(wo, group + SPLIT_STR + id, sfeature);
@@ -93,11 +93,11 @@ namespace db {
             sort(users.begin(), users.end(), cmp);
             num++;
         }
-        mutex.lock();
+        mut.lock();
         if (groupMap.find(group) != groupMap.end()){ //group 有可能这个时候被删除
             groupMap[group] = num;
         }
-        mutex.unlock();
+        mut.unlock();
         return 0;
     }
 
@@ -133,11 +133,11 @@ namespace db {
             users.insert(users.end(), user_arr[i].begin(), user_arr[i].end());
             totol += nums[i];
         }
-        mutex.lock();
+        mut.lock();
         if (groupMap.find(group) != groupMap.end()){ //group 有可能这个时候被删除
             groupMap[group] = totol;
         }
-        mutex.unlock();
+        mut.unlock();
         sort(users.begin(), users.end(), cmp);
         if (users.size() > 5) {
             users.erase(users.begin() + 5, users.end());
@@ -184,9 +184,9 @@ namespace db {
     }
 
     int DB::DelGroup(const string &group) {
-        mutex.lock();
+        mut.lock();
         size_t ret = groupMap.erase(group);
-        mutex.unlock();
+        mut.unlock();
         //@todo 非线程安全 需要改进
         if (ret == 1) {
             rocksdb::Status status = db->Delete(wo, GROUP_PREFIX + group);
@@ -204,13 +204,13 @@ namespace db {
     }
 
     int DB::GroupList(vector<string> &groups) {
-        mutex.lock();
+        mut.lock();
         auto iter = groupMap.begin();
         while (iter != groupMap.end()) {
             groups.push_back(iter->first);
             iter++;
         }
-        mutex.unlock();
+        mut.unlock();
         return 0;
     }
 
@@ -229,7 +229,7 @@ namespace db {
 
 
     uint64_t DB::GroupSize(const string &group) {
-        mutex.lock();
+        mut.lock();
         uint64_t  size = 0;
         if (groupMap.find(group) != groupMap.end()) {
             size  = uint64_t(groupMap[group]);
@@ -241,19 +241,19 @@ namespace db {
              db->GetApproximateSizes(range, 1, size, true);
              size  =size[0]/2048;
         }*/
-        mutex.unlock();
+        mut.unlock();
         return size;
     }
 
     int DB::Info(pb::InfoReply & infoReply) {
-        mutex.lock();
+        mut.lock();
         infoReply.set_groupslen(int(groupMap.size()));
         for(auto const &v:groupMap) {
             pb::InfoReply_GroupInfo* group = infoReply.add_groups();
             group->set_name(v.first);
             group->set_len(v.second);
         }
-        mutex.unlock();
+        mut.unlock();
     }
 
     DB::~DB() {
