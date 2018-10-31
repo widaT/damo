@@ -85,7 +85,7 @@ struct parseini{
 class INI
 {
 private:
-    static INI *instance;
+    static INI *instance ;
 
 public:
 	INI();

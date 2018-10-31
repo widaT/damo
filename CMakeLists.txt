@@ -12,6 +12,10 @@ aux_source_directory(. DIR_SRCS)
 set(SOURCE_FILES main.cpp)
 add_executable(damo ${SOURCE_FILES})
 
+if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")       # 用IF控制，可以实现Release版本不输出debug信息
+    add_definitions(-DDEBUG)
+endif()
+
 #link_directories("/usr/local/lib")  #添加编译链接的目录
 target_link_libraries(damo db)
 target_link_libraries(damo rocksdb)

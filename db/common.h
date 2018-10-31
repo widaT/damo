@@ -8,7 +8,6 @@
 #include <sstream>
 #include <iostream>
 #define FEATURE_SIZE 512  //特征值大小
-#define COMMON_CONFIG "/home/wida/cppworkspace/damo/etc/conf.conf" //配置文件的目录
 
 float distance(float *, float *);
 void pack(float *, std::string &);

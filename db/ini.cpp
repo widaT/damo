@@ -1,15 +1,19 @@
 #include "ini.h"
 #include "common.h"
 namespace config {
-	INI *INI::instance = new INI();
+	INI *INI::instance = nullptr;
 
 	INI::INI(){
-#ifdef COMMON_CONFIG
-		if (!Open(COMMON_CONFIG)) {
-			cerr << "open config file(" << COMMON_CONFIG << ") error!"  <<endl;
-			exit(-1);
-		}
-#endif
+        string path = cwd();
+        #ifdef DEBUG
+            string config_path = "/home/wida/cppworkspace/damo/etc/conf.conf"; //本地开发调试时使用
+        #else
+            string config_path = path+"/etc/conf.conf";
+        #endif
+        if (!(Open(config_path.c_str()))){
+             cerr << "open config file(" << config_path << ") error!"  <<endl;
+             exit(-1);
+        }
 	}
 
 	INI::~INI(){
