@@ -18,7 +18,7 @@ namespace db {
         options.create_if_missing = true;
         rocksdb::Status status = rocksdb::DB::Open(options, path, &db);
         if (!status.ok()) {
-            cerr << "rocksdb open error!";
+            cerr << "rocksdb open error!" << endl;
             exit(-1);
         }
         auto iter = db->NewIterator(ro);

@@ -5,7 +5,10 @@ namespace config {
 
 	INI::INI(){
 #ifdef COMMON_CONFIG
-		Open(COMMON_CONFIG);
+		if (!Open(COMMON_CONFIG)) {
+			cerr << "open config file(" << COMMON_CONFIG << ") error!"  <<endl;
+			exit(-1);
+		}
 #endif
 	}
 
