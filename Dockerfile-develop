@@ -45,8 +45,6 @@ RUN mkdir -p /data/app/etc \
 
 COPY etc/conf.conf /data/app/etc
 
-RUN rm -rf grpc rocksdb cmake-3.11.4 /build
-
 ENV LD_LIBRARY_PATH usr/lib:/usr/local/lib
 ENV PATH /data/app:$PATH
 
