@@ -6,3 +6,5 @@ add_library (db ${DIR_LIB_SRCS})
 if (${CMAKE_BUILD_TYPE} STREQUAL "Debug")       # 用IF控制，可以实现Release版本不输出debug信息
     add_definitions(-DDEBUG)
 endif()
+
+set(CMAKE_CXX_FLAGS "-O3 -mavx -pthread")

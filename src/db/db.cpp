@@ -72,12 +72,14 @@ namespace db {
         auto iter = db->NewIterator(ro);
         float ifeautre[FEATURE_SIZE] = {0};
         int num = 0;
-        for (iter->Seek(group); iter->Valid() && iter->key().starts_with(group); iter->Next()) {
+
+        string grpup_prefix = group+ SPLIT_STR;
+        for (iter->Seek(grpup_prefix); iter->Valid() && iter->key().starts_with(grpup_prefix); iter->Next()) {
             auto sfeature = iter->value().ToString();
             unpack(ifeautre, sfeature);
             auto distance = avx_euclidean_distance(ifeautre, feature);
             auto key = iter->key();
-            key.remove_prefix((group + SPLIT_STR).size());
+            key.remove_prefix(grpup_prefix.size());
             if (users.size() < 5) {
                 SearchReply_User user;
                 user.set_name(key.ToString());
