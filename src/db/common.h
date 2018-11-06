@@ -13,15 +13,13 @@ float distance(float *, float *);
 void pack(float *, std::string &);
 void unpack(float *, std::string &);
 std::string cwd();
-inline float avx_euclidean_distance(float *x, float *y) { //inline 函数体需要一起
-    static const size_t single_size = 8;
-    const size_t end = FEATURE_SIZE / single_size;
-    __m256 *vx = (__m256 *) x;
-    __m256 *vy = (__m256 *) y;
-    __m256 vsub = {0};
-    __m256 vsum = {0};
-    for (size_t i = 0; i < end; ++i) {
-        vsub = _mm256_sub_ps(vx[i], vy[i]);
+inline float avx_euclidean_distance( float *x, float *y)
+{
+    __m256 vsub,vsum={0},v1,v2;
+    for(size_t i=0; i < FEATURE_SIZE; i=i+8) {
+        v1  = _mm256_loadu_ps(x+i);
+        v2  = _mm256_loadu_ps(y+i);
+        vsub = _mm256_sub_ps(v1, v2);
         vsum = _mm256_add_ps(vsum, _mm256_mul_ps(vsub, vsub));
     }
     __attribute__((aligned(32))) float t[8] = {0};
