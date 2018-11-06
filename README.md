@@ -7,3 +7,11 @@
 - 使用rocksdb做存储 百万人脸特征库 1：n 性能为1-3秒
 
 - 采用avx指令指令集优化比对
+
+
+##docker
+
+```
+docker build -t damo:v1 .
+docker run -id -p 8010:50051 -v /home/wida/dockerdata/damo:/data/app/data:rw  --name damov1 damo:v1
+```

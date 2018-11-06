@@ -29,7 +29,7 @@ RUN apt-get install -y wget \
     && make \ 
     && make install \
     && rm -rf /cmake-3.11.4.tar.gz /cmake-3.11.4 \
-    && apt-get remove wget
+    && apt-get remove -y wget
 
 
 RUN mkdir -p /build
@@ -45,7 +45,7 @@ RUN mkdir -p /data/app/etc \
     && mkdir -p /data/app/log \
     && cp /build/src/damo /data/app 
 
-COPY etc/conf_releash.conf /data/app/etc/conf.conf
+COPY etc/conf_release.conf /data/app/etc/conf.conf
 
 ENV LD_LIBRARY_PATH usr/lib:/usr/local/lib
 ENV PATH /data/app:$PATH
