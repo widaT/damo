@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install -y build-essential autoconf libtool curl git wget vim
+RUN apt-get install -y build-essential autoconf libtool curl git
 
 RUN git clone -b $(curl -L http://grpc.io/release) https://github.com/grpc/grpc \
     && cd grpc \
@@ -21,13 +21,15 @@ RUN apt-get install -y libgflags-dev libsnappy-dev zlib1g-dev libbz2-dev \
     && rm -rf /rocksdb
 
 
-RUN wget https://cmake.org/files/v3.11/cmake-3.11.4.tar.gz \
+RUN apt-get install -y wget \
+    && wget https://cmake.org/files/v3.11/cmake-3.11.4.tar.gz \
     && tar xzvf cmake-3.11.4.tar.gz \
     && cd cmake-3.11.4 \
     && ./configure \
     && make \ 
     && make install \
-    && rm -rf /cmake-3.11.4.tar.gz /cmake-3.11.4
+    && rm -rf /cmake-3.11.4.tar.gz /cmake-3.11.4 \
+    && apt-get remove wget
 
 
 RUN mkdir -p /build
