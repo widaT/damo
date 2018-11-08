@@ -8,8 +8,11 @@
 
 - 采用avx指令指令集优化比对
 
+- 支持物理机和docker 运行
 
-##docker
+- 采用cmake构建至少cmake3.8 c++11
+
+##  docker
 
 ```
 docker build -t damo:v1 .
