@@ -61,6 +61,10 @@ namespace db {
     }
 
     int DB::Search(const string &group, float *feature, vector<pb::SearchReply_User> &users) {
+
+
+        cout << GroupSize(group) <<endl;
+
         if (GroupSize(group) > NEED_MTREAD_SEARCH) {
             return QSearch(group, feature, users);
         } else {
@@ -122,9 +126,9 @@ namespace db {
         int i = 0;
         for (auto &range:keys) {
             //多线程 lambda 引用捕获外部变量,i必须要要copy捕获
-            threads.emplace_back([&,i]() {
-                _search(group, get<0>(range), get<1>(range), feature, user_arr[i],nums[i]);
-            });
+            threads.emplace_back([&](int index) {
+                _search(group, get<0>(range), get<1>(range), feature, user_arr[index],nums[index]);
+            },i);
             i++;
         }
         for (auto &tr:threads) {
