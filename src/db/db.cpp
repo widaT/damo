@@ -61,10 +61,6 @@ namespace db {
     }
 
     int DB::Search(const string &group, float *feature, vector<pb::SearchReply_User> &users) {
-
-
-        cout << GroupSize(group) <<endl;
-
         if (GroupSize(group) > NEED_MTREAD_SEARCH) {
             return QSearch(group, feature, users);
         } else {
