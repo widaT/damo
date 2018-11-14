@@ -24,7 +24,7 @@ namespace db {
         rocksdb::ReadOptions ro = rocksdb::ReadOptions();
         std::map<std::string,int> groupMap;
         std::mutex mut;
-        ThreadPool *pool = new ThreadPool(5);
+        ThreadPool *pool = new ThreadPool(10);
 
     public:
         DB(const std::string&);
