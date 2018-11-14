@@ -10,7 +10,10 @@ using namespace pb;
 
 namespace db {
     bool cmp(SearchReply_User x, SearchReply_User y) {
-        return x.distance() < y.distance();
+        if (x.distance() == y.distance()) {
+            return x.name() > y.name();
+        }
+        return x.distance() > y.distance();
     }
 
     DB::DB(const string &path) {
@@ -73,7 +76,7 @@ namespace db {
         float ifeautre[FEATURE_SIZE] = {0};
         int num = 0;
 
-        string grpup_prefix = group+ SPLIT_STR;
+        string grpup_prefix = group + SPLIT_STR;
         for (iter->Seek(grpup_prefix); iter->Valid() && iter->key().starts_with(grpup_prefix); iter->Next()) {
             auto sfeature = iter->value().ToString();
             unpack(ifeautre, sfeature);
@@ -92,11 +95,11 @@ namespace db {
                     users[4].set_name(key.ToString());
                 }
             }
-            sort(users.begin(), users.end(), cmp);
+            sort(users.rbegin(), users.rend(), cmp);
             num++;
         }
         mut.lock();
-        if (groupMap.find(group) != groupMap.end()){ //group 有可能这个时候被删除
+        if (groupMap.find(group) != groupMap.end()) { //group 有可能这个时候被删除
             groupMap[group] = num;
         }
         mut.unlock();
@@ -110,13 +113,28 @@ namespace db {
                 make_tuple("h", "0"),
                 make_tuple("o", "u"),
                 make_tuple("u", "{")};*/
-        make_tuple("0", "3"),//左开右闭
+                make_tuple("0", "3"),//左开右闭
                 make_tuple("3", "6"),
                 make_tuple("6", "a"),
                 make_tuple("a", "e"),
                 make_tuple("e", "{")};
 
+        std::vector<std::future<int>> rets;
         vector<SearchReply_User> user_arr[5];
+        int i = 0;
+        for (auto &range:keys) {
+            rets.emplace_back(
+                    pool->enqueue([&, i] {
+                        return _search(group, get<0>(range), get<1>(range), feature, user_arr[i]);
+                    })
+            );
+            i++;
+        }
+        int total = 0;
+        for (auto &&ret:rets) {
+            total += ret.get();
+        }
+        /*vector<SearchReply_User> user_arr[5];
         vector<thread> threads;
         int nums[5] = {0};
         int i = 0;
@@ -124,23 +142,20 @@ namespace db {
             //多线程 lambda 引用捕获外部变量,i必须要要copy捕获
             threads.emplace_back([&](int index) {
                 _search(group, get<0>(range), get<1>(range), feature, user_arr[index],nums[index]);
-            },i);
-            i++;
+            },i++);
         }
         for (auto &tr:threads) {
             tr.join();
-        }
-        int totol = 0;
-        for (int i=0;i< 5;i++) {
-            users.insert(users.end(), user_arr[i].begin(), user_arr[i].end());
-            totol += nums[i];
+        }*/
+        for (auto const &user : user_arr) {
+            users.insert(users.end(), user.begin(), user.end());
         }
         mut.lock();
-        if (groupMap.find(group) != groupMap.end()){ //group 有可能这个时候被删除
-            groupMap[group] = totol;
+        if (groupMap.find(group) != groupMap.end()) { //group 有可能这个时候被删除
+            groupMap[group] = total;
         }
         mut.unlock();
-        sort(users.begin(), users.end(), cmp);
+        sort(users.rbegin(), users.rend(), cmp);
         if (users.size() > 5) {
             users.erase(users.begin() + 5, users.end());
         }
@@ -148,8 +163,9 @@ namespace db {
     }
 
 
-    void DB::_search(const string &group, const string &startkey, const string &endkey,
-                                float *feature, vector<SearchReply_User> &users,int &num) {
+    int DB::_search(const string &group, const string &startkey, const string &endkey,
+                    float *feature, vector<SearchReply_User> &users) {
+        int num = 0;
         auto iter = db->NewIterator(ro);
         float ifeautre[FEATURE_SIZE];
         string skey = group + SPLIT_STR + startkey;
@@ -157,23 +173,24 @@ namespace db {
         for (iter->Seek(skey); iter->Valid() && iter->key().compare(ekey) < 0; iter->Next()) {
             auto sfeature = iter->value().ToString();
             unpack(ifeautre, sfeature);
-             auto distance = avx_euclidean_distance(ifeautre, feature);
-             auto key = iter->key();
-             key.remove_prefix((group + SPLIT_STR).size());
-               if (users.size() < 5) {
-                   SearchReply_User user;
-                   user.set_name(key.ToString());
-                   user.set_distance(distance);
-                   users.push_back(user);
-               } else {
-                   if (users[4].distance() > distance) {
-                       users[4].set_distance(distance);
-                       users[4].set_name(key.ToString());
-                   }
-               }
-             sort(users.begin(), users.end(), cmp);
-             num ++;
+            auto distance = avx_euclidean_distance(ifeautre, feature);
+            auto key = iter->key();
+            key.remove_prefix((group + SPLIT_STR).size());
+            if (users.size() < 5) {
+                SearchReply_User user;
+                user.set_name(key.ToString());
+                user.set_distance(distance);
+                users.push_back(user);
+            } else {
+                if (users[4].distance() > distance) {
+                    users[4].set_distance(distance);
+                    users[4].set_name(key.ToString());
+                }
+            }
+            sort(users.rbegin(), users.rend(), cmp);
+            num++;
         }
+        return num;
     }
 
     int DB::Delete(const string &group, const string &id) {
@@ -232,9 +249,9 @@ namespace db {
 
     uint64_t DB::GroupSize(const string &group) {
         mut.lock();
-        uint64_t  size = 0;
+        uint64_t size = 0;
         if (groupMap.find(group) != groupMap.end()) {
-            size  = uint64_t(groupMap[group]);
+            size = uint64_t(groupMap[group]);
         }
         /* if (size == 1) {  //为1的时候可能是没有search过，利用rocksdb的文件和内存占用大小预估groupsize
              rocksdb::Range range[1];
@@ -247,11 +264,11 @@ namespace db {
         return size;
     }
 
-    int DB::Info(pb::InfoReply & infoReply) {
+    int DB::Info(pb::InfoReply &infoReply) {
         mut.lock();
         infoReply.set_groupslen(int(groupMap.size()));
-        for(auto const &v:groupMap) {
-            pb::InfoReply_GroupInfo* group = infoReply.add_groups();
+        for (auto const &v:groupMap) {
+            pb::InfoReply_GroupInfo *group = infoReply.add_groups();
             group->set_name(v.first);
             group->set_len(v.second);
         }
@@ -259,6 +276,7 @@ namespace db {
     }
 
     DB::~DB() {
+        delete pool;
         db->Close();
     }
 }

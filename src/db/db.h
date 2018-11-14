@@ -10,6 +10,7 @@
 #include "../pb/search.pb.h"
 #include <map>
 #include <mutex>
+#include "threadpool.h"
 namespace db {
 
     class DB {
@@ -22,7 +23,8 @@ namespace db {
         rocksdb::WriteOptions wo = rocksdb::WriteOptions();
         rocksdb::ReadOptions ro = rocksdb::ReadOptions();
         std::map<std::string,int> groupMap;
-        std::mutex  mut;
+        std::mutex mut;
+        ThreadPool *pool = new ThreadPool(5);
 
     public:
         DB(const std::string&);
@@ -39,7 +41,7 @@ namespace db {
 
         int QSearch(const std::string &, float *, std::vector<pb::SearchReply_User> &);//多线程
 
-        void _search(const std::string &, const std::string &,const std::string  &, float *, std::vector<pb::SearchReply_User> &,int&);
+        int _search(const std::string &, const std::string &,const std::string  &, float *, std::vector<pb::SearchReply_User> &);
 
         int DelGroup(const std::string &);
 
