@@ -16,7 +16,9 @@ namespace db {
         return x.distance() > y.distance();
     }
 
-    DB::DB(const string &path) {
+    DB::DB(const string &path):pool(10){
+        wo = rocksdb::WriteOptions();
+        ro =rocksdb::ReadOptions();
         rocksdb::Options options;
         options.create_if_missing = true;
         rocksdb::Status status = rocksdb::DB::Open(options, path, &db);
@@ -124,7 +126,7 @@ namespace db {
         int i = 0;
         for (auto &range:keys) {
             rets.emplace_back(
-                    pool->enqueue([&, i] {
+                    pool.enqueue([&, i] {
                         return _search(group, get<0>(range), get<1>(range), feature, user_arr[i]);
                     })
             );
@@ -276,7 +278,6 @@ namespace db {
     }
 
     DB::~DB() {
-        delete pool;
         db->Close();
     }
 }

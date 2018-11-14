@@ -20,11 +20,11 @@ namespace db {
 
     private:
         rocksdb::DB *db;
-        rocksdb::WriteOptions wo = rocksdb::WriteOptions();
-        rocksdb::ReadOptions ro = rocksdb::ReadOptions();
+        rocksdb::WriteOptions wo;
+        rocksdb::ReadOptions ro;
         std::map<std::string,int> groupMap;
         std::mutex mut;
-        ThreadPool *pool = new ThreadPool(10);
+        ThreadPool pool;
 
     public:
         DB(const std::string&);
