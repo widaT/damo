@@ -5,6 +5,7 @@
 #include "db/ini.h"
 #include "db/facedb.h"
 #include "db/common.h"
+#include "etcdclient/client.h"
 
 using namespace std;
 using namespace pb;
@@ -104,6 +105,14 @@ int RunServer() {
     INI *conf = INI::GetInstance();
     string port = conf->Read("base", "port");
     std::string server_address("0.0.0.0:" + port);
+
+
+    //注册节点
+    EtcdClient etcdClient(conf->Read("etcd", "url"));
+    string node("facedb_notes/");
+    node += get_local_ip()+":"+port;
+    etcdClient.put(node,get_local_time());
+
     SearchServiceImpl service;
     ServerBuilder builder;
     builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());

@@ -4,6 +4,7 @@ project(damo)
 
 add_subdirectory(db)
 add_subdirectory(pb)
+add_subdirectory(etcdclient)
 aux_source_directory(.. DIR_SRCS)
 
 set(SOURCE_FILES main.cpp)
@@ -23,3 +24,4 @@ target_link_libraries(damo grpc++)
 target_link_libraries(damo grpc)
 target_link_libraries(damo grpc++_reflection)
 target_link_libraries(damo dl)
+target_link_libraries(damo etcdclient)
