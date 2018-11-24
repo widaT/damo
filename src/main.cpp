@@ -6,7 +6,7 @@
 #include "db/facedb.h"
 #include "db/common.h"
 #include "etcdclient/client.h"
-
+#include <stdlib.h>
 using namespace std;
 using namespace pb;
 using namespace config;
@@ -104,9 +104,11 @@ class SearchServiceImpl final : public ::Facedb::Service {
 int RunServer() {
     INI *conf = INI::GetInstance();
     string port = conf->Read("base", "port");
-    std::string server_address("0.0.0.0:" + port);
-
-
+    string server_address("0.0.0.0:" + port);
+    string etcd = conf->Read("etcd", "url");
+    if (0 != getenv("etcd")) {
+        etcd = getenv("etcd"); //读取环境变量 etcd
+    }
     //注册节点
     EtcdClient etcdClient(conf->Read("etcd", "url"));
     string node("facedb_notes/");
