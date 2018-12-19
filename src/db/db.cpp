@@ -74,12 +74,14 @@ namespace db {
     }
 
     int DB::NSearch(const string &group, float *feature, vector<pb::SearchReply_User> &users) {
-        auto iter = db->NewIterator(ro);
+        rocksdb::ReadOptions read_options;
+        read_options.prefix_same_as_start = true;
+        auto iter = db->NewIterator(read_options);
         float ifeautre[FEATURE_SIZE] = {0};
         int num = 0;
 
         string grpup_prefix = group + SPLIT_STR;
-        for (iter->Seek(grpup_prefix); iter->Valid() && iter->key().starts_with(grpup_prefix); iter->Next()) {
+        for (iter->Seek(grpup_prefix); iter->Valid(); iter->Next()) {
             auto sfeature = iter->value().ToString();
             unpack(ifeautre, sfeature);
             auto distance = avx_euclidean_distance(ifeautre, feature);
@@ -110,11 +112,6 @@ namespace db {
 
     int DB::QSearch(const string &group, float *feature, vector<pb::SearchReply_User> &users) {
         static const vector<tuple<string, string>> keys = {
-/*                make_tuple("0", "a"),//左开右闭
-                make_tuple("a", "h"),
-                make_tuple("h", "0"),
-                make_tuple("o", "u"),
-                make_tuple("u", "{")};*/
                 make_tuple("0", "3"),//左开右闭
                 make_tuple("3", "6"),
                 make_tuple("6", "a"),
@@ -136,19 +133,6 @@ namespace db {
         for (auto &&ret:rets) {
             total += ret.get();
         }
-        /*vector<SearchReply_User> user_arr[5];
-        vector<thread> threads;
-        int nums[5] = {0};
-        int i = 0;
-        for (auto &range:keys) {
-            //多线程 lambda 引用捕获外部变量,i必须要要copy捕获
-            threads.emplace_back([&](int index) {
-                _search(group, get<0>(range), get<1>(range), feature, user_arr[index],nums[index]);
-            },i++);
-        }
-        for (auto &tr:threads) {
-            tr.join();
-        }*/
         for (auto const &user : user_arr) {
             users.insert(users.end(), user.begin(), user.end());
         }
@@ -168,7 +152,9 @@ namespace db {
     int DB::_search(const string &group, const string &startkey, const string &endkey,
                     float *feature, vector<SearchReply_User> &users) {
         int num = 0;
-        auto iter = db->NewIterator(ro);
+        rocksdb::ReadOptions read_options;
+        read_options.prefix_same_as_start = true;
+        auto iter = db->NewIterator(read_options);
         float ifeautre[FEATURE_SIZE];
         string skey = group + SPLIT_STR + startkey;
         string ekey = group + SPLIT_STR + endkey;
@@ -210,15 +196,14 @@ namespace db {
         mut.unlock();
         //@todo 非线程安全 需要改进
         if (ret == 1) {
-            rocksdb::Status status = db->Delete(wo, GROUP_PREFIX + group);
+            string start(group + SPLIT_STR);
+            string end(group + SPLIT_STR +"{");
+            rocksdb::WriteBatch batch;
+            batch.Delete(GROUP_PREFIX + group);
+            batch.DeleteRange(start,end);
+            auto status = db->Write(wo,& batch);
             if (!status.ok()) {
                 return -1;
-            }
-            //删除用户
-            auto iter = db->NewIterator(ro);
-            string prefix(group + SPLIT_STR);
-            for (iter->Seek(prefix); iter->Valid() && iter->key().starts_with(prefix); iter->Next()) {
-                db->Delete(wo, iter->key());
             }
         }
         return 0;
