@@ -30,9 +30,12 @@ inline float avx_euclidean_distance( float *x, float *y)
         vsub = _mm256_sub_ps(v1, v2);
         vsum = _mm256_add_ps(vsum, _mm256_mul_ps(vsub, vsub));
     }
-    __attribute__((aligned(32))) float t[8] = {0};
-    _mm256_store_ps(t, vsum);
-    return t[0] + t[1] + t[2] + t[3] + t[4] + t[5] + t[6] + t[7];
+    __m256 t1 = _mm256_hadd_ps(vsum,vsum);
+    __m256 t2 = _mm256_hadd_ps(t1,t1);
+    __m128 t3 = _mm256_extractf128_ps(t2,1);
+    __m128 t4 = _mm_add_ss(_mm256_castps256_ps128(t2),t3);
+
+    return _mm_cvtss_f32(t4);
 }
 
 inline  std::string get_local_ip(){
